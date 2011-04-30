@@ -1,0 +1,862 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C91C0D0113120473003394FA /* KeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C0D0013120473003394FA /* KeyboardLayout.m */; };
+		C9222569132D38E500E32599 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9222568132D38E500E32599 /* ProgressView.m */; };
+		C92240AF132302F900A5359F /* ByteShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92240AE132302F900A5359F /* ByteShopViewController.m */; };
+		C92240B713230DFB00A5359F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C92240B413230DFB00A5359F /* JSONKit.m */; };
+		C9249F4D1321AB7200F985B1 /* ParseDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9249F4C1321AB7200F985B1 /* ParseDumpOperation.m */; };
+		C9249F4E1321AB7200F985B1 /* ParseDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9249F4C1321AB7200F985B1 /* ParseDumpOperation.m */; };
+		C9423786130F651400F835EE /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9423785130F651400F835EE /* ScreenView.m */; };
+		C9423787130F651400F835EE /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9423785130F651400F835EE /* ScreenView.m */; };
+		C942378B130F657700F835EE /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = C942378A130F657700F835EE /* UIView.m */; };
+		C942378E130F66D500F835EE /* UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C942378D130F66D500F835EE /* UIColor.m */; };
+		C9423791130F670600F835EE /* UIGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = C9423790130F670600F835EE /* UIGraphics.m */; };
+		C94A6CB91326E94F004C379C /* PIA6821+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C94A6CB81326E94F004C379C /* PIA6821+Additions.m */; };
+		C94A6CBA1326E94F004C379C /* PIA6821+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C94A6CB81326E94F004C379C /* PIA6821+Additions.m */; };
+		C9AC30CB132842D600392B3B /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC30CA132842D600392B3B /* UIView+Additions.m */; };
+		C9AE29CA13513BF40003E85B /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE29C913513BF40003E85B /* UserDefaults.m */; };
+		C9B8564413075167005062FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8564313075167005062FC /* UIKit.framework */; };
+		C9B8564613075167005062FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8564513075167005062FC /* Foundation.framework */; };
+		C9B8564813075167005062FC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8564713075167005062FC /* CoreGraphics.framework */; };
+		C9B8566A130751D2005062FC /* M6502.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B85665130751D2005062FC /* M6502.m */; };
+		C9B8566B130751D2005062FC /* M6502.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B85665130751D2005062FC /* M6502.m */; };
+		C9B8566C130751D2005062FC /* Memory.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B85667130751D2005062FC /* Memory.m */; };
+		C9B8566D130751D2005062FC /* Memory.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B85667130751D2005062FC /* Memory.m */; };
+		C9B856801307522A005062FC /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B856721307522A005062FC /* MainWindowController.m */; };
+		C9B856811307522A005062FC /* NibbleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B856741307522A005062FC /* NibbleAppDelegate.m */; };
+		C9B856821307522A005062FC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B856761307522A005062FC /* MainMenu.xib */; };
+		C9B856831307522A005062FC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B856781307522A005062FC /* MainWindow.xib */; };
+		C9B856861307522A005062FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B8567E1307522A005062FC /* main.m */; };
+		C9B856881307525C005062FC /* apple1.rom in Resources */ = {isa = PBXBuildFile; fileRef = C9B856871307525C005062FC /* apple1.rom */; };
+		C9B856891307525C005062FC /* apple1.rom in Resources */ = {isa = PBXBuildFile; fileRef = C9B856871307525C005062FC /* apple1.rom */; };
+		C9B8569213075282005062FC /* NibbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B8568C13075282005062FC /* NibbleTests.m */; };
+		C9B856A5130753B1005062FC /* NibbleTouchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B85697130753B1005062FC /* NibbleTouchAppDelegate.m */; };
+		C9B856A6130753B1005062FC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B85699130753B1005062FC /* RootViewController.m */; };
+		C9B856A7130753B1005062FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9B8569B130753B1005062FC /* InfoPlist.strings */; };
+		C9B856A8130753B1005062FC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B8569D130753B1005062FC /* MainWindow.xib */; };
+		C9B856A9130753B1005062FC /* NibbleTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B8569F130753B1005062FC /* NibbleTouchViewController.xib */; };
+		C9B856AB130753B1005062FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B856A3130753B1005062FC /* main.m */; };
+		C9B856AC1307544A005062FC /* NibbleTests.h in Resources */ = {isa = PBXBuildFile; fileRef = C9B8568B13075282005062FC /* NibbleTests.h */; };
+		C9B856AE13075463005062FC /* M6502.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B85665130751D2005062FC /* M6502.m */; };
+		C9B856AF13075466005062FC /* Memory.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B85667130751D2005062FC /* Memory.m */; };
+		C9C34E4E1311D53E001DFE41 /* KeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C34E4D1311D53E001DFE41 /* KeyboardView.m */; };
+		C9C34E561311DBA1001DFE41 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C34E551311DBA1001DFE41 /* QuartzCore.framework */; };
+		C9C34E591311DF14001DFE41 /* KeyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C34E581311DF14001DFE41 /* KeyButton.m */; };
+		C9C34E5F1311ECA0001DFE41 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C9C34E5E1311ECA0001DFE41 /* background.png */; };
+		C9C34E781311F08B001DFE41 /* screen.png in Resources */ = {isa = PBXBuildFile; fileRef = C9C34E771311F08B001DFE41 /* screen.png */; };
+		C9D999EB1329AE060002DAB2 /* PrintChar21.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9D999EA1329AE060002DAB2 /* PrintChar21.ttf */; };
+		C9D999ED1329AE170002DAB2 /* PrintChar21.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9D999EC1329AE170002DAB2 /* PrintChar21.ttf */; };
+		C9DF170012FDE5C900ECF9FB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DF16FF12FDE5C900ECF9FB /* Cocoa.framework */; };
+		C9DF171D12FDE5CA00ECF9FB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DF16FF12FDE5C900ECF9FB /* Cocoa.framework */; };
+		C9E21A35132BC84700987AB0 /* nav_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E21A34132BC84700987AB0 /* nav_bar.png */; };
+		C9E21A39132BC86A00987AB0 /* UINavigationBar+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E21A38132BC86A00987AB0 /* UINavigationBar+Style.m */; };
+		C9E21A3B132BC9E000987AB0 /* table_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E21A3A132BC9E000987AB0 /* table_background.png */; };
+		C9E21A3D132BCD7100987AB0 /* selected_row.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E21A3C132BCD7100987AB0 /* selected_row.png */; };
+		C9EE72C0130F390300A07627 /* PIA6821.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE72BF130F390300A07627 /* PIA6821.m */; };
+		C9EE72C1130F390300A07627 /* PIA6821.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE72BF130F390300A07627 /* PIA6821.m */; };
+		C9EE72C4130F455900A07627 /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EE72C3130F455900A07627 /* reset.png */; };
+		C9F15FE3135C805C0006C5D8 /* AddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F15FE1135C805C0006C5D8 /* AddressView.xib */; };
+		C9F15FE7135C849B0006C5D8 /* ArchiveDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F15FE6135C849B0006C5D8 /* ArchiveDumpOperation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9DF171E12FDE5CA00ECF9FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9DF16F212FDE5C900ECF9FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9DF16FA12FDE5C900ECF9FB;
+			remoteInfo = Nibble;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C91C0CFF13120473003394FA /* KeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardLayout.h; sourceTree = "<group>"; };
+		C91C0D0013120473003394FA /* KeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardLayout.m; sourceTree = "<group>"; };
+		C9222567132D38E500E32599 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		C9222568132D38E500E32599 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		C92240AD132302F900A5359F /* ByteShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteShopViewController.h; sourceTree = "<group>"; };
+		C92240AE132302F900A5359F /* ByteShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ByteShopViewController.m; sourceTree = "<group>"; };
+		C92240B213230DFB00A5359F /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		C92240B313230DFB00A5359F /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		C92240B413230DFB00A5359F /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		C92240B513230DFB00A5359F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		C9249F4B1321AB7200F985B1 /* ParseDumpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseDumpOperation.h; sourceTree = "<group>"; };
+		C9249F4C1321AB7200F985B1 /* ParseDumpOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseDumpOperation.m; sourceTree = "<group>"; };
+		C9423784130F651400F835EE /* ScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
+		C9423785130F651400F835EE /* ScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
+		C9423789130F657700F835EE /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
+		C942378A130F657700F835EE /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView.m; sourceTree = "<group>"; };
+		C942378C130F66D500F835EE /* UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColor.h; sourceTree = "<group>"; };
+		C942378D130F66D500F835EE /* UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor.m; sourceTree = "<group>"; };
+		C942378F130F670600F835EE /* UIGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGraphics.h; sourceTree = "<group>"; };
+		C9423790130F670600F835EE /* UIGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGraphics.m; sourceTree = "<group>"; };
+		C94A6CB71326E94F004C379C /* PIA6821+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PIA6821+Additions.h"; sourceTree = "<group>"; };
+		C94A6CB81326E94F004C379C /* PIA6821+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PIA6821+Additions.m"; sourceTree = "<group>"; };
+		C9AC30C9132842D600392B3B /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Additions.h"; path = "../Mac/UIKit/UIView+Additions.h"; sourceTree = "<group>"; };
+		C9AC30CA132842D600392B3B /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Additions.m"; path = "../Mac/UIKit/UIView+Additions.m"; sourceTree = "<group>"; };
+		C9AE29C813513BF40003E85B /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
+		C9AE29C913513BF40003E85B /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		C9B8564113075167005062FC /* NibbleTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NibbleTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B8564313075167005062FC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C9B8564513075167005062FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C9B8564713075167005062FC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C9B85663130751D2005062FC /* M6502+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M6502+Private.h"; sourceTree = "<group>"; };
+		C9B85664130751D2005062FC /* M6502.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M6502.h; sourceTree = "<group>"; };
+		C9B85665130751D2005062FC /* M6502.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = M6502.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		C9B85666130751D2005062FC /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory.h; sourceTree = "<group>"; };
+		C9B85667130751D2005062FC /* Memory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Memory.m; sourceTree = "<group>"; };
+		C9B856711307522A005062FC /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		C9B856721307522A005062FC /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		C9B856731307522A005062FC /* NibbleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibbleAppDelegate.h; sourceTree = "<group>"; };
+		C9B856741307522A005062FC /* NibbleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibbleAppDelegate.m; sourceTree = "<group>"; };
+		C9B856771307522A005062FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C9B856791307522A005062FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		C9B8567A1307522A005062FC /* Nibble-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Nibble-Info.plist"; sourceTree = "<group>"; };
+		C9B8567E1307522A005062FC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9B8567F1307522A005062FC /* Nibble-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Nibble-Prefix.pch"; sourceTree = "<group>"; };
+		C9B856871307525C005062FC /* apple1.rom */ = {isa = PBXFileReference; lastKnownFileType = file; path = apple1.rom; sourceTree = "<group>"; };
+		C9B8568B13075282005062FC /* NibbleTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibbleTests.h; sourceTree = "<group>"; };
+		C9B8568C13075282005062FC /* NibbleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibbleTests.m; sourceTree = "<group>"; };
+		C9B8569013075282005062FC /* NibbleTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NibbleTests-Info.plist"; sourceTree = "<group>"; };
+		C9B8569113075282005062FC /* NibbleTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NibbleTests-Prefix.pch"; sourceTree = "<group>"; };
+		C9B85696130753B1005062FC /* NibbleTouchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibbleTouchAppDelegate.h; sourceTree = "<group>"; };
+		C9B85697130753B1005062FC /* NibbleTouchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibbleTouchAppDelegate.m; sourceTree = "<group>"; };
+		C9B85698130753B1005062FC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		C9B85699130753B1005062FC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		C9B8569C130753B1005062FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C9B8569E130753B1005062FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		C9B856A0130753B1005062FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NibbleTouchViewController.xib; sourceTree = "<group>"; };
+		C9B856A1130753B1005062FC /* NibbleTouch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NibbleTouch-Info.plist"; sourceTree = "<group>"; };
+		C9B856A3130753B1005062FC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9B856A4130753B1005062FC /* NibbleTouch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NibbleTouch-Prefix.pch"; sourceTree = "<group>"; };
+		C9C34E4C1311D53E001DFE41 /* KeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardView.h; sourceTree = "<group>"; };
+		C9C34E4D1311D53E001DFE41 /* KeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardView.m; sourceTree = "<group>"; };
+		C9C34E551311DBA1001DFE41 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		C9C34E571311DF14001DFE41 /* KeyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyButton.h; sourceTree = "<group>"; };
+		C9C34E581311DF14001DFE41 /* KeyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyButton.m; sourceTree = "<group>"; };
+		C9C34E5E1311ECA0001DFE41 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		C9C34E771311F08B001DFE41 /* screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen.png; sourceTree = "<group>"; };
+		C9D999EA1329AE060002DAB2 /* PrintChar21.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrintChar21.ttf; sourceTree = SOURCE_ROOT; };
+		C9D999EC1329AE170002DAB2 /* PrintChar21.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrintChar21.ttf; sourceTree = SOURCE_ROOT; };
+		C9DF16FB12FDE5C900ECF9FB /* Nibble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nibble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9DF16FF12FDE5C900ECF9FB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C9DF170212FDE5C900ECF9FB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C9DF170312FDE5C900ECF9FB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C9DF170412FDE5C900ECF9FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C9DF171C12FDE5CA00ECF9FB /* NibbleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NibbleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9E21A34132BC84700987AB0 /* nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar.png; sourceTree = "<group>"; };
+		C9E21A37132BC86A00987AB0 /* UINavigationBar+Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Style.h"; sourceTree = "<group>"; };
+		C9E21A38132BC86A00987AB0 /* UINavigationBar+Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Style.m"; sourceTree = "<group>"; };
+		C9E21A3A132BC9E000987AB0 /* table_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_background.png; sourceTree = "<group>"; };
+		C9E21A3C132BCD7100987AB0 /* selected_row.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_row.png; sourceTree = "<group>"; };
+		C9EE72BE130F390300A07627 /* PIA6821.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIA6821.h; sourceTree = "<group>"; };
+		C9EE72BF130F390300A07627 /* PIA6821.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIA6821.m; sourceTree = "<group>"; };
+		C9EE72C3130F455900A07627 /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
+		C9F15FE2135C805C0006C5D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AddressView.xib; sourceTree = "<group>"; };
+		C9F15FE5135C849B0006C5D8 /* ArchiveDumpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveDumpOperation.h; sourceTree = "<group>"; };
+		C9F15FE6135C849B0006C5D8 /* ArchiveDumpOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveDumpOperation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9B8563E13075167005062FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B8564813075167005062FC /* CoreGraphics.framework in Frameworks */,
+				C9B8564613075167005062FC /* Foundation.framework in Frameworks */,
+				C9C34E561311DBA1001DFE41 /* QuartzCore.framework in Frameworks */,
+				C9B8564413075167005062FC /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9DF16F812FDE5C900ECF9FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9DF170012FDE5C900ECF9FB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9DF171812FDE5CA00ECF9FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9DF171D12FDE5CA00ECF9FB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C92240B113230DFB00A5359F /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				C92240B213230DFB00A5359F /* CHANGELOG.md */,
+				C92240B313230DFB00A5359F /* JSONKit.h */,
+				C92240B413230DFB00A5359F /* JSONKit.m */,
+				C92240B513230DFB00A5359F /* README.md */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		C9423783130F64FA00F835EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9423784130F651400F835EE /* ScreenView.h */,
+				C9423785130F651400F835EE /* ScreenView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9423788130F653500F835EE /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C942378C130F66D500F835EE /* UIColor.h */,
+				C942378D130F66D500F835EE /* UIColor.m */,
+				C942378F130F670600F835EE /* UIGraphics.h */,
+				C9423790130F670600F835EE /* UIGraphics.m */,
+				C9423789130F657700F835EE /* UIView.h */,
+				C942378A130F657700F835EE /* UIView.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C9B85662130751D2005062FC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C9F15FE5135C849B0006C5D8 /* ArchiveDumpOperation.h */,
+				C9F15FE6135C849B0006C5D8 /* ArchiveDumpOperation.m */,
+				C92240B113230DFB00A5359F /* JSONKit */,
+				C9B85663130751D2005062FC /* M6502+Private.h */,
+				C9B85664130751D2005062FC /* M6502.h */,
+				C9B85665130751D2005062FC /* M6502.m */,
+				C9B85666130751D2005062FC /* Memory.h */,
+				C9B85667130751D2005062FC /* Memory.m */,
+				C9249F4B1321AB7200F985B1 /* ParseDumpOperation.h */,
+				C9249F4C1321AB7200F985B1 /* ParseDumpOperation.m */,
+				C9EE72BE130F390300A07627 /* PIA6821.h */,
+				C9EE72BF130F390300A07627 /* PIA6821.m */,
+				C94A6CB71326E94F004C379C /* PIA6821+Additions.h */,
+				C94A6CB81326E94F004C379C /* PIA6821+Additions.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C9B856701307522A005062FC /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				C9B856711307522A005062FC /* MainWindowController.h */,
+				C9B856721307522A005062FC /* MainWindowController.m */,
+				C9B856731307522A005062FC /* NibbleAppDelegate.h */,
+				C9B856741307522A005062FC /* NibbleAppDelegate.m */,
+				C9AE29C813513BF40003E85B /* UserDefaults.h */,
+				C9AE29C913513BF40003E85B /* UserDefaults.m */,
+				C9423788130F653500F835EE /* UIKit */,
+				C9B856751307522A005062FC /* Resources */,
+				C9B8567D1307522A005062FC /* Support */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		C9B856751307522A005062FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9F15FE1135C805C0006C5D8 /* AddressView.xib */,
+				C9B856761307522A005062FC /* MainMenu.xib */,
+				C9B856781307522A005062FC /* MainWindow.xib */,
+				C9B8567A1307522A005062FC /* Nibble-Info.plist */,
+				C9D999EC1329AE170002DAB2 /* PrintChar21.ttf */,
+				C9EE72C3130F455900A07627 /* reset.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C9B8567D1307522A005062FC /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C9B8567E1307522A005062FC /* main.m */,
+				C9B8567F1307522A005062FC /* Nibble-Prefix.pch */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		C9B8568A13075282005062FC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C9B8568B13075282005062FC /* NibbleTests.h */,
+				C9B8568C13075282005062FC /* NibbleTests.m */,
+				C9B8568F13075282005062FC /* Support */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		C9B8568F13075282005062FC /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C9B8569013075282005062FC /* NibbleTests-Info.plist */,
+				C9B8569113075282005062FC /* NibbleTests-Prefix.pch */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		C9B85695130753B1005062FC /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				C92240AD132302F900A5359F /* ByteShopViewController.h */,
+				C92240AE132302F900A5359F /* ByteShopViewController.m */,
+				C91C0CFF13120473003394FA /* KeyboardLayout.h */,
+				C91C0D0013120473003394FA /* KeyboardLayout.m */,
+				C9C34E4C1311D53E001DFE41 /* KeyboardView.h */,
+				C9C34E4D1311D53E001DFE41 /* KeyboardView.m */,
+				C9C34E571311DF14001DFE41 /* KeyButton.h */,
+				C9C34E581311DF14001DFE41 /* KeyButton.m */,
+				C9B85696130753B1005062FC /* NibbleTouchAppDelegate.h */,
+				C9B85697130753B1005062FC /* NibbleTouchAppDelegate.m */,
+				C9222567132D38E500E32599 /* ProgressView.h */,
+				C9222568132D38E500E32599 /* ProgressView.m */,
+				C9B85698130753B1005062FC /* RootViewController.h */,
+				C9B85699130753B1005062FC /* RootViewController.m */,
+				C9E21A37132BC86A00987AB0 /* UINavigationBar+Style.h */,
+				C9E21A38132BC86A00987AB0 /* UINavigationBar+Style.m */,
+				C9AC30C9132842D600392B3B /* UIView+Additions.h */,
+				C9AC30CA132842D600392B3B /* UIView+Additions.m */,
+				C9B8569A130753B1005062FC /* Resources */,
+				C9B856A2130753B1005062FC /* Support */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		C9B8569A130753B1005062FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9C34E5E1311ECA0001DFE41 /* background.png */,
+				C9B8569B130753B1005062FC /* InfoPlist.strings */,
+				C9B8569D130753B1005062FC /* MainWindow.xib */,
+				C9E21A34132BC84700987AB0 /* nav_bar.png */,
+				C9B8569F130753B1005062FC /* NibbleTouchViewController.xib */,
+				C9B856A1130753B1005062FC /* NibbleTouch-Info.plist */,
+				C9D999EA1329AE060002DAB2 /* PrintChar21.ttf */,
+				C9C34E771311F08B001DFE41 /* screen.png */,
+				C9E21A3C132BCD7100987AB0 /* selected_row.png */,
+				C9E21A3A132BC9E000987AB0 /* table_background.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C9B856A2130753B1005062FC /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C9B856A3130753B1005062FC /* main.m */,
+				C9B856A4130753B1005062FC /* NibbleTouch-Prefix.pch */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		C9DF16F012FDE5C900ECF9FB = {
+			isa = PBXGroup;
+			children = (
+				C9B856871307525C005062FC /* apple1.rom */,
+				C9B85662130751D2005062FC /* Core */,
+				C9423783130F64FA00F835EE /* View */,
+				C9B856701307522A005062FC /* Mac */,
+				C9B85695130753B1005062FC /* iPad */,
+				C9B8568A13075282005062FC /* Tests */,
+				C9DF16FE12FDE5C900ECF9FB /* Frameworks */,
+				C9DF16FC12FDE5C900ECF9FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9DF16FC12FDE5C900ECF9FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9DF16FB12FDE5C900ECF9FB /* Nibble.app */,
+				C9DF171C12FDE5CA00ECF9FB /* NibbleTests.octest */,
+				C9B8564113075167005062FC /* NibbleTouch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9DF16FE12FDE5C900ECF9FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9DF16FF12FDE5C900ECF9FB /* Cocoa.framework */,
+				C9B8564713075167005062FC /* CoreGraphics.framework */,
+				C9B8564513075167005062FC /* Foundation.framework */,
+				C9C34E551311DBA1001DFE41 /* QuartzCore.framework */,
+				C9B8564313075167005062FC /* UIKit.framework */,
+				C9DF170112FDE5C900ECF9FB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9DF170112FDE5C900ECF9FB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9DF170212FDE5C900ECF9FB /* AppKit.framework */,
+				C9DF170312FDE5C900ECF9FB /* CoreData.framework */,
+				C9DF170412FDE5C900ECF9FB /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9B8564013075167005062FC /* NibbleTouch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9B8566013075167005062FC /* Build configuration list for PBXNativeTarget "NibbleTouch" */;
+			buildPhases = (
+				C9B8563D13075167005062FC /* Sources */,
+				C9B8563E13075167005062FC /* Frameworks */,
+				C9B8563F13075167005062FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NibbleTouch;
+			productName = NibbleTouch;
+			productReference = C9B8564113075167005062FC /* NibbleTouch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9DF16FA12FDE5C900ECF9FB /* Nibble */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9DF172D12FDE5CA00ECF9FB /* Build configuration list for PBXNativeTarget "Nibble" */;
+			buildPhases = (
+				C9DF16F712FDE5C900ECF9FB /* Sources */,
+				C9DF16F812FDE5C900ECF9FB /* Frameworks */,
+				C9DF16F912FDE5C900ECF9FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nibble;
+			productName = Nibble;
+			productReference = C9DF16FB12FDE5C900ECF9FB /* Nibble.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9DF171B12FDE5CA00ECF9FB /* NibbleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9DF173012FDE5CA00ECF9FB /* Build configuration list for PBXNativeTarget "NibbleTests" */;
+			buildPhases = (
+				C9DF171712FDE5CA00ECF9FB /* Sources */,
+				C9DF171812FDE5CA00ECF9FB /* Frameworks */,
+				C9DF171912FDE5CA00ECF9FB /* Resources */,
+				C9DF171A12FDE5CA00ECF9FB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9DF171F12FDE5CA00ECF9FB /* PBXTargetDependency */,
+			);
+			name = NibbleTests;
+			productName = NibbleTests;
+			productReference = C9DF171C12FDE5CA00ECF9FB /* NibbleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9DF16F212FDE5C900ECF9FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Matt Rajca";
+			};
+			buildConfigurationList = C9DF16F512FDE5C900ECF9FB /* Build configuration list for PBXProject "Nibble" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C9DF16F012FDE5C900ECF9FB;
+			productRefGroup = C9DF16FC12FDE5C900ECF9FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9DF16FA12FDE5C900ECF9FB /* Nibble */,
+				C9B8564013075167005062FC /* NibbleTouch */,
+				C9DF171B12FDE5CA00ECF9FB /* NibbleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9B8563F13075167005062FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B856891307525C005062FC /* apple1.rom in Resources */,
+				C9B856A7130753B1005062FC /* InfoPlist.strings in Resources */,
+				C9B856A8130753B1005062FC /* MainWindow.xib in Resources */,
+				C9B856A9130753B1005062FC /* NibbleTouchViewController.xib in Resources */,
+				C9C34E5F1311ECA0001DFE41 /* background.png in Resources */,
+				C9C34E781311F08B001DFE41 /* screen.png in Resources */,
+				C9D999EB1329AE060002DAB2 /* PrintChar21.ttf in Resources */,
+				C9E21A35132BC84700987AB0 /* nav_bar.png in Resources */,
+				C9E21A3B132BC9E000987AB0 /* table_background.png in Resources */,
+				C9E21A3D132BCD7100987AB0 /* selected_row.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9DF16F912FDE5C900ECF9FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B856881307525C005062FC /* apple1.rom in Resources */,
+				C9B856821307522A005062FC /* MainMenu.xib in Resources */,
+				C9B856831307522A005062FC /* MainWindow.xib in Resources */,
+				C9EE72C4130F455900A07627 /* reset.png in Resources */,
+				C9D999ED1329AE170002DAB2 /* PrintChar21.ttf in Resources */,
+				C9F15FE3135C805C0006C5D8 /* AddressView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9DF171912FDE5CA00ECF9FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B856AC1307544A005062FC /* NibbleTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C9DF171A12FDE5CA00ECF9FB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9B8563D13075167005062FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B8566B130751D2005062FC /* M6502.m in Sources */,
+				C9B8566D130751D2005062FC /* Memory.m in Sources */,
+				C9B856A5130753B1005062FC /* NibbleTouchAppDelegate.m in Sources */,
+				C9B856A6130753B1005062FC /* RootViewController.m in Sources */,
+				C9B856AB130753B1005062FC /* main.m in Sources */,
+				C9EE72C1130F390300A07627 /* PIA6821.m in Sources */,
+				C9423787130F651400F835EE /* ScreenView.m in Sources */,
+				C9C34E4E1311D53E001DFE41 /* KeyboardView.m in Sources */,
+				C9C34E591311DF14001DFE41 /* KeyButton.m in Sources */,
+				C91C0D0113120473003394FA /* KeyboardLayout.m in Sources */,
+				C9249F4E1321AB7200F985B1 /* ParseDumpOperation.m in Sources */,
+				C92240AF132302F900A5359F /* ByteShopViewController.m in Sources */,
+				C92240B713230DFB00A5359F /* JSONKit.m in Sources */,
+				C94A6CBA1326E94F004C379C /* PIA6821+Additions.m in Sources */,
+				C9AC30CB132842D600392B3B /* UIView+Additions.m in Sources */,
+				C9E21A39132BC86A00987AB0 /* UINavigationBar+Style.m in Sources */,
+				C9222569132D38E500E32599 /* ProgressView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9DF16F712FDE5C900ECF9FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B8566A130751D2005062FC /* M6502.m in Sources */,
+				C9B8566C130751D2005062FC /* Memory.m in Sources */,
+				C9B856801307522A005062FC /* MainWindowController.m in Sources */,
+				C9B856811307522A005062FC /* NibbleAppDelegate.m in Sources */,
+				C9B856861307522A005062FC /* main.m in Sources */,
+				C9EE72C0130F390300A07627 /* PIA6821.m in Sources */,
+				C9423786130F651400F835EE /* ScreenView.m in Sources */,
+				C942378B130F657700F835EE /* UIView.m in Sources */,
+				C942378E130F66D500F835EE /* UIColor.m in Sources */,
+				C9423791130F670600F835EE /* UIGraphics.m in Sources */,
+				C9249F4D1321AB7200F985B1 /* ParseDumpOperation.m in Sources */,
+				C94A6CB91326E94F004C379C /* PIA6821+Additions.m in Sources */,
+				C9AE29CA13513BF40003E85B /* UserDefaults.m in Sources */,
+				C9F15FE7135C849B0006C5D8 /* ArchiveDumpOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9DF171712FDE5CA00ECF9FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B856AE13075463005062FC /* M6502.m in Sources */,
+				C9B856AF13075466005062FC /* Memory.m in Sources */,
+				C9B8569213075282005062FC /* NibbleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9DF171F12FDE5CA00ECF9FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9DF16FA12FDE5C900ECF9FB /* Nibble */;
+			targetProxy = C9DF171E12FDE5CA00ECF9FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C9B856761307522A005062FC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9B856771307522A005062FC /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		C9B856781307522A005062FC /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9B856791307522A005062FC /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		C9B8569B130753B1005062FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9B8569C130753B1005062FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C9B8569D130753B1005062FC /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9B8569E130753B1005062FC /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		C9B8569F130753B1005062FC /* NibbleTouchViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9B856A0130753B1005062FC /* en */,
+			);
+			name = NibbleTouchViewController.xib;
+			sourceTree = "<group>";
+		};
+		C9F15FE1135C805C0006C5D8 /* AddressView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9F15FE2135C805C0006C5D8 /* en */,
+			);
+			name = AddressView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9B8565E13075167005062FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPad/Support/NibbleTouch-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "iPad/Resources//NibbleTouch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos4.3;
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C9B8565F13075167005062FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPad/Support/NibbleTouch-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "iPad/Resources//NibbleTouch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos4.3;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C9DF172B12FDE5CA00ECF9FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C9DF172C12FDE5CA00ECF9FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C9DF172E12FDE5CA00ECF9FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mac/Support/Nibble-Prefix.pch";
+				INFOPLIST_FILE = "Mac/Resources/Nibble-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C9DF172F12FDE5CA00ECF9FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mac/Support/Nibble-Prefix.pch";
+				INFOPLIST_FILE = "Mac/Resources/Nibble-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C9DF173112FDE5CA00ECF9FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Nibble.app/Contents/MacOS/Nibble";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Support/NibbleTests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Support/NibbleTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C9DF173212FDE5CA00ECF9FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Nibble.app/Contents/MacOS/Nibble";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Support/NibbleTests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Support/NibbleTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9B8566013075167005062FC /* Build configuration list for PBXNativeTarget "NibbleTouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9B8565E13075167005062FC /* Debug */,
+				C9B8565F13075167005062FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9DF16F512FDE5C900ECF9FB /* Build configuration list for PBXProject "Nibble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9DF172B12FDE5CA00ECF9FB /* Debug */,
+				C9DF172C12FDE5CA00ECF9FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9DF172D12FDE5CA00ECF9FB /* Build configuration list for PBXNativeTarget "Nibble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9DF172E12FDE5CA00ECF9FB /* Debug */,
+				C9DF172F12FDE5CA00ECF9FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9DF173012FDE5CA00ECF9FB /* Build configuration list for PBXNativeTarget "NibbleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9DF173112FDE5CA00ECF9FB /* Debug */,
+				C9DF173212FDE5CA00ECF9FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9DF16F212FDE5C900ECF9FB /* Project object */;
+}

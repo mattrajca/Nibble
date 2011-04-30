@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload</title>
+	
+	<style type="text/css">
+		
+		body {
+			margin-top: 40px;
+			font-family: 'Lucida Grande', Lucida, 'Lucida Grande Unicode', Verdana, sans-serif;
+		}
+		h1 {
+			font-size: 16px;
+		}
+		form {
+			width: 581px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		form input[type=text] {
+			width: 300px;
+			height: 18px;
+			margin-bottom: 6px;
+			border: 1px solid gray;
+			font-size: 12px;
+		}
+		textarea {
+			margin: 0;
+			border: 1px solid gray;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<form action="/upload" method="post">
+		<h1>Upload a new App</h1>
+		
+		<input type="text" name="name" placeholder="Name" /><br>
+		<input type="text" name="description" placeholder="Description" /><br>
+		<input type="text" name="identifier" placeholder="Identifier" /><br>
+		<textarea name="source" rows="30" cols="80" placeholder="Source goes here..."></textarea>
+		<input type="submit" value="Upload" />
+	</form>
+</body>
+</html>
