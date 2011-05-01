@@ -111,7 +111,7 @@
 	if (_timer)
 		return;
 	
-	_timer = [[NSTimer scheduledTimerWithTimeInterval:1/1000.0f
+	_timer = [[NSTimer scheduledTimerWithTimeInterval:1/10000.0f
 											   target:self
 											 selector:@selector(processOpCode)
 											 userInfo:nil
