@@ -114,6 +114,7 @@
 	
 	_accum = _x = _y = 0;
 	_b = _c = _d = _i = _n = _v = _z = 0;
+	_cycles = 0;
 }
 
 - (void)run {

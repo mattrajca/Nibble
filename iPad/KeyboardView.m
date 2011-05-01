@@ -143,8 +143,8 @@
 		return;
 	}
 	
-	if ([delegate respondsToSelector:@selector(keyboardView:didTapKeyAtIndexPath:)]) {
-		[delegate keyboardView:self didTapKeyAtIndexPath:key];
+	if ([delegate respondsToSelector:@selector(keyboardView:didReleaseKey:indexPath:)]) {
+		[delegate keyboardView:self didReleaseKey:button indexPath:key];
 	}
 }
 

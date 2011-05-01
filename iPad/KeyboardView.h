@@ -34,6 +34,6 @@
 - (void)keyboardView:(KeyboardView *)aView configureButton:(KeyButton *)button
 		 atIndexPath:(NSIndexPath *)path;
 
-- (void)keyboardView:(KeyboardView *)aView didTapKeyAtIndexPath:(NSIndexPath *)path;
+- (void)keyboardView:(KeyboardView *)aView didReleaseKey:(KeyButton *)button indexPath:(NSIndexPath *)path;
 
 @end

@@ -11,8 +11,7 @@
 @interface PIA6821 : NSObject {
   @private
 	Memory *_memory;
-	BOOL _inputEnabled;
-	BOOL _videoEnabled;
+	BOOL _inputEnabled, _videoEnabled;
 }
 
 @property (nonatomic, assign) id < PIA6821Delegate > delegate;

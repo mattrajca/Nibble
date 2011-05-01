@@ -29,6 +29,8 @@
 - (void)setupSystem;
 - (void)loadROM;
 
+- (void)showResetSheet:(id)sender;
+- (void)reset:(BOOL)hard;
 - (void)presentByteShop;
 
 @end
@@ -41,7 +43,7 @@
 
 static uint16_t sLastAddr;
 
-@synthesize keyboardView, byteShopButton;
+@synthesize byteShopButton, keyboardView;
 
 - (void)dealloc {
 	[_memory release];
@@ -50,8 +52,9 @@ static uint16_t sLastAddr;
 	
 	[_externalWindow release];
 	[_screenView release];
-	[keyboardView release];
+	
 	[byteShopButton release];
+	[keyboardView release];
 	
 	[super dealloc];
 }
@@ -258,30 +261,28 @@ static uint16_t sLastAddr;
 	}
 }
 
-- (void)keyboardView:(KeyboardView *)aView didTapKeyAtIndexPath:(NSIndexPath *)path {
+- (void)keyboardView:(KeyboardView *)aView
+	   didReleaseKey:(KeyButton *)button
+		   indexPath:(NSIndexPath *)path {
+	
 	KeyStruct key = [self keyForIndexPath:path];
 	
 	if (!strcmp(key.title, "RESET")) {
-		[self reset:nil];
-		return;
+		[self performSelector:@selector(showResetSheet:) withObject:button afterDelay:0.0f];
 	}
-	
-	if (keyboardView.isShiftDown) {
+	else if (keyboardView.isShiftDown) {
 		if (key.sTitle == NULL)
 			return;
 		
 		[_screenView insertText:[NSString stringWithFormat:@"%c", key.sRepChar]];
 		[keyboardView untoggleShiftKey];
-		
-		return;
 	}
-	
-	if (key.repChar == 0) {
+	else if (key.repChar == 0) {
 		NSLog(@"The '%s' key has not been implemented", key.title);
-		return;
 	}
-	
-	[_screenView insertText:[NSString stringWithFormat:@"%c", key.repChar]];
+	else {
+		[_screenView insertText:[NSString stringWithFormat:@"%c", key.repChar]];
+	}
 }
 
 #pragma mark -
@@ -368,14 +369,32 @@ static uint16_t sLastAddr;
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)reset:(id)sender {
+- (void)showResetSheet:(id)sender {
+	UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+													   delegate:self
+											  cancelButtonTitle:nil
+										 destructiveButtonTitle:nil
+											  otherButtonTitles:@"Reset", @"Hard Reset", nil];
+	
+	[sheet showFromRect:[sender frame] inView:self.keyboardView animated:YES];
+	[sheet release];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	[self reset:(buttonIndex != 0)];
+}
+
+- (void)reset:(BOOL)hard {
 	[_processor stop];
 	
-	[_memory reset]; // ROM has to be reloaded before running M6502
+	if (hard)
+		[_memory reset];
+	
 	[_pia reset];
 	[_screenView reset];
 	
-	[self loadROM];
+	if (hard)
+		[self loadROM];
 	
 	[_processor reset];
 	[_processor run];

@@ -39,11 +39,13 @@
 
 - (void)dealloc {
 	[_memory release];
+	
 	[super dealloc];
 }
 
 - (void)reset {
 	_inputEnabled = _videoEnabled = NO;
+	
 	[self setup];
 }
 

@@ -16,6 +16,8 @@
     if (self) {
 		_size = size;
 		_buffer = malloc(size);
+		_writeWatch = [[NSMutableDictionary alloc] init];
+		_readWatch = [[NSMutableDictionary alloc] init];
 		
 		[self reset];
     }
@@ -24,6 +26,7 @@
 
 - (void)finalize {
 	free(_buffer);
+	
 	[super finalize];
 }
 
@@ -39,14 +42,8 @@
 - (void)reset {
 	bzero(_buffer, _size);
 	
-	if (_writeWatch)
-		[_writeWatch release];
-	
-	if (_readWatch)
-		[_readWatch release];
-	
-	_writeWatch = [[NSMutableDictionary alloc] init];
-	_readWatch = [[NSMutableDictionary alloc] init];
+	[_writeWatch removeAllObjects];
+	[_readWatch removeAllObjects];
 }
 
 - (void)loadMemory:(NSData *)data atAddress:(uint16_t)addr {

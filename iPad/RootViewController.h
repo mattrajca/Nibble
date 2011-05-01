@@ -13,7 +13,7 @@
 
 @class KeyButton;
 
-@interface RootViewController : UIViewController < PIA6821Delegate, KeyboardViewDelegate, ScreenViewDelegate > {
+@interface RootViewController : UIViewController < UIActionSheetDelegate, PIA6821Delegate, KeyboardViewDelegate, ScreenViewDelegate > {
   @private
 	Memory *_memory;
 	M6502 *_processor;
@@ -23,9 +23,7 @@
 	ScreenView *_screenView;
 }
 
-@property (nonatomic, retain) IBOutlet KeyboardView *keyboardView;
 @property (nonatomic, retain) IBOutlet KeyButton *byteShopButton;
-
-- (IBAction)reset:(id)sender;
+@property (nonatomic, retain) IBOutlet KeyboardView *keyboardView;
 
 @end
