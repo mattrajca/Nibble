@@ -11,7 +11,7 @@
   @private
 	Memory *_memory;
 	uint8_t _accum, _x, _y;
-	uint8_t _c, _d, _i, _n, _v, _z;
+	uint8_t _b, _c, _d, _i, _n, _v, _z;
 	uint8_t _stackPtr;
 	uint16_t _pc; // keeps track of the address of the current instruction
 	NSTimer *_timer;
@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) uint8_t x;
 @property (nonatomic, readonly) uint8_t y;
 
+@property (nonatomic, readonly) uint8_t b;
 @property (nonatomic, readonly) uint8_t c;
 @property (nonatomic, readonly) uint8_t d;
 @property (nonatomic, readonly) uint8_t i;

@@ -1188,6 +1188,41 @@ static uint16_t gAddr = 0x0;
 	STAssertTrue([_processor z] == 0, @"z should be 0");
 }
 
+- (void)testPHPplusPLP {
+	[_processor SEC];
+	[_processor SED];
+	[_processor SEI];
+	[_processor LDA:-20]; // sets n to 1
+	[_processor PHP];
+	
+	[_processor LDA:0]; // sets z to 1
+	[_processor PHP];
+	
+	[_processor CLC];
+	[_processor CLD];
+	[_processor CLI];
+	
+	[_processor PLP];
+	
+	STAssertTrue([_processor b] == 0, @"b should be 0");
+	STAssertTrue([_processor c] == 1, @"c should be 1");
+	STAssertTrue([_processor d] == 1, @"d should be 1");
+	STAssertTrue([_processor i] == 1, @"i should be 1");
+	STAssertTrue([_processor n] == 0, @"n should be 0");
+	STAssertTrue([_processor v] == 0, @"v should be 0");
+	STAssertTrue([_processor z] == 1, @"z should be 1");
+	
+	[_processor PLP];
+	
+	STAssertTrue([_processor b] == 0, @"b should be 0");
+	STAssertTrue([_processor c] == 1, @"c should be 1");
+	STAssertTrue([_processor d] == 1, @"d should be 1");
+	STAssertTrue([_processor i] == 1, @"i should be 1");
+	STAssertTrue([_processor n] == 1, @"n should be 1");
+	STAssertTrue([_processor v] == 0, @"v should be 0");
+	STAssertTrue([_processor z] == 0, @"z should be 0");
+}
+
 #pragma mark -
 #pragma mark Subroutines and Jump
 

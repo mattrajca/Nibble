@@ -46,6 +46,7 @@
 @synthesize x = _x;
 @synthesize y = _y;
 
+@synthesize b = _b;
 @synthesize c = _c;
 @synthesize d = _d;
 @synthesize i = _i;
@@ -103,7 +104,7 @@
 	_stackPtr = 0xFF;
 	
 	_accum = _x = _y = 0;
-	_c = _d = _i = _n = _v = _z = 0;
+	_b = _c = _d = _i = _n = _v = _z = 0;
 }
 
 - (void)run {
@@ -140,6 +141,11 @@
 		case 0x06:
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self ASL:addr];
+			}];
+			break;
+		case 0x08:
+			[self executeImpliedOp:^{
+				[self PHP];
 			}];
 			break;
 		case 0x09:
@@ -225,6 +231,11 @@
 		case 0x26:
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self ROL:addr];
+			}];
+			break;
+		case 0x28:
+			[self executeImpliedOp:^{
+				[self PLP];
 			}];
 			break;
 		case 0x29:
@@ -1368,6 +1379,40 @@
 	_accum = [self popByteFromStack];
 	_cycles += 2;
 	[self setNZAccordingly:_accum];
+}
+
+#define SB (1 << 0)
+#define SC (1 << 1)
+#define SD (1 << 2)
+#define SI (1 << 3)
+#define SN (1 << 4)
+#define SV (1 << 5)
+#define SZ (1 << 6)
+
+- (void)PHP {
+	uint8_t status = 0;
+	
+	if (_b) status |= SB;
+	if (_c) status |= SC;
+	if (_d) status |= SD;
+	if (_i) status |= SI;
+	if (_n) status |= SN;
+	if (_v) status |= SV;
+	if (_z) status |= SZ;
+	
+	[self pushByteToStack:status];
+}
+
+- (void)PLP {
+	uint8_t status = [self popByteFromStack];
+	
+	_b = (status & SB) != 0;
+	_c = (status & SC) != 0;
+	_d = (status & SD) != 0;
+	_i = (status & SI) != 0;
+	_n = (status & SN) != 0;
+	_v = (status & SV) != 0;
+	_z = (status & SZ) != 0;
 }
 
 #pragma mark -

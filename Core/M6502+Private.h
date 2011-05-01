@@ -60,6 +60,8 @@
 
 - (void)PHA;
 - (void)PLA;
+- (void)PHP;
+- (void)PLP;
 
 - (void)JMP:(uint16_t)addr;
 - (void)JSR:(uint16_t)addr;
