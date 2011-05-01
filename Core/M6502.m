@@ -42,7 +42,7 @@
 #define STACK_LOC (0x100 + _stackPtr)
 #define MEM_VAL(addr) [_memory readByteAtAddress:(addr)]
 
-#define SPEED 1000 // nanoseconds
+#define SPEED 200000 // nanoseconds
 
 @synthesize accum = _accum;
 @synthesize x = _x;
