@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90A9D04136DFE8700D8BBCF /* Reset.png in Resources */ = {isa = PBXBuildFile; fileRef = C90A9D03136DFE8700D8BBCF /* Reset.png */; };
 		C91C0D0113120473003394FA /* KeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C0D0013120473003394FA /* KeyboardLayout.m */; };
 		C9222569132D38E500E32599 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9222568132D38E500E32599 /* ProgressView.m */; };
 		C92240AF132302F900A5359F /* ByteShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92240AE132302F900A5359F /* ByteShopViewController.m */; };
@@ -61,7 +62,6 @@
 		C9E21A3D132BCD7100987AB0 /* selected_row.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E21A3C132BCD7100987AB0 /* selected_row.png */; };
 		C9EE72C0130F390300A07627 /* PIA6821.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE72BF130F390300A07627 /* PIA6821.m */; };
 		C9EE72C1130F390300A07627 /* PIA6821.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE72BF130F390300A07627 /* PIA6821.m */; };
-		C9EE72C4130F455900A07627 /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EE72C3130F455900A07627 /* reset.png */; };
 		C9F15FE3135C805C0006C5D8 /* AddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F15FE1135C805C0006C5D8 /* AddressView.xib */; };
 		C9F15FE7135C849B0006C5D8 /* ArchiveDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F15FE6135C849B0006C5D8 /* ArchiveDumpOperation.m */; };
 /* End PBXBuildFile section */
@@ -77,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C90A9D03136DFE8700D8BBCF /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
 		C91C0CFF13120473003394FA /* KeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardLayout.h; sourceTree = "<group>"; };
 		C91C0D0013120473003394FA /* KeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardLayout.m; sourceTree = "<group>"; };
 		C9222567132D38E500E32599 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
@@ -158,7 +159,6 @@
 		C9E21A3C132BCD7100987AB0 /* selected_row.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_row.png; sourceTree = "<group>"; };
 		C9EE72BE130F390300A07627 /* PIA6821.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIA6821.h; sourceTree = "<group>"; };
 		C9EE72BF130F390300A07627 /* PIA6821.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIA6821.m; sourceTree = "<group>"; };
-		C9EE72C3130F455900A07627 /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
 		C9F15FE2135C805C0006C5D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AddressView.xib; sourceTree = "<group>"; };
 		C9F15FE5135C849B0006C5D8 /* ArchiveDumpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveDumpOperation.h; sourceTree = "<group>"; };
 		C9F15FE6135C849B0006C5D8 /* ArchiveDumpOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveDumpOperation.m; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 				C9B856781307522A005062FC /* MainWindow.xib */,
 				C9B8567A1307522A005062FC /* Nibble-Info.plist */,
 				C9D999EC1329AE170002DAB2 /* PrintChar21.ttf */,
-				C9EE72C3130F455900A07627 /* reset.png */,
+				C90A9D03136DFE8700D8BBCF /* Reset.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -514,9 +514,9 @@
 				C9B856881307525C005062FC /* apple1.rom in Resources */,
 				C9B856821307522A005062FC /* MainMenu.xib in Resources */,
 				C9B856831307522A005062FC /* MainWindow.xib in Resources */,
-				C9EE72C4130F455900A07627 /* reset.png in Resources */,
 				C9D999ED1329AE170002DAB2 /* PrintChar21.ttf in Resources */,
 				C9F15FE3135C805C0006C5D8 /* AddressView.xib in Resources */,
+				C90A9D04136DFE8700D8BBCF /* Reset.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
