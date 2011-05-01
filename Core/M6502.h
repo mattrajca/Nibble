@@ -14,7 +14,8 @@
 	uint8_t _b, _c, _d, _i, _n, _v, _z;
 	uint8_t _stackPtr;
 	uint16_t _pc; // keeps track of the address of the current instruction
-	NSTimer *_timer;
+	dispatch_queue_t _queue;
+	dispatch_source_t _timer;
 	uint16_t _cycles;
 }
 

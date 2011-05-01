@@ -55,9 +55,11 @@
 		
 		[_memory writeByte:val atAddress:DSP_LOC];
 		
-		if ([self.delegate respondsToSelector:@selector(PIA6821:outputVideoChar:)]) {
-			[self.delegate PIA6821:self outputVideoChar:val];
-		}
+		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+			if ([self.delegate respondsToSelector:@selector(PIA6821:outputVideoChar:)]) {
+				[self.delegate PIA6821:self outputVideoChar:val];
+			}
+		}];
 		
 	}];
 	

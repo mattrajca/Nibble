@@ -42,6 +42,8 @@
 #define STACK_LOC (0x100 + _stackPtr)
 #define MEM_VAL(addr) [_memory readByteAtAddress:(addr)]
 
+#define SPEED 1000 // nanoseconds
+
 @synthesize accum = _accum;
 @synthesize x = _x;
 @synthesize y = _y;
@@ -73,7 +75,15 @@
 
 - (void)dealloc {
 	[_memory release];
-	[_timer release];
+	
+	if (_timer) {
+		dispatch_source_cancel(_timer);
+		dispatch_release(_timer);
+	}
+	
+	if (_queue) {
+		dispatch_release(_queue);
+	}
 	
 	[super dealloc];
 }
@@ -83,10 +93,9 @@
 
 - (void)stop {
 	if (_timer) {
-		[_timer invalidate];
-		
-		[_timer release];
-		_timer = nil;
+		dispatch_source_cancel(_timer);
+		dispatch_release(_timer);
+		_timer = NULL;
 	}
 }
 
@@ -111,11 +120,18 @@
 	if (_timer)
 		return;
 	
-	_timer = [[NSTimer scheduledTimerWithTimeInterval:1/10000.0f
-											   target:self
-											 selector:@selector(processOpCode)
-											 userInfo:nil
-											  repeats:YES] retain];
+	if (!_queue) {
+		_queue = dispatch_queue_create("timer", 0);
+	}
+	
+	_timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, _queue);
+	dispatch_source_set_timer(_timer, DISPATCH_TIME_NOW, SPEED, 10);
+	
+	dispatch_source_set_event_handler(_timer, ^{
+		[self processOpCode];
+	});
+	
+	dispatch_resume(_timer);
 }
 
 - (void)processOpCode {
