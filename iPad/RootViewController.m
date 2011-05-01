@@ -381,6 +381,9 @@ static uint16_t sLastAddr;
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == -1)
+		return;
+	
 	[self reset:(buttonIndex != 0)];
 }
 
