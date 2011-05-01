@@ -1400,6 +1400,7 @@
 	if (_v) status |= SV;
 	if (_z) status |= SZ;
 	
+	_cycles++;
 	[self pushByteToStack:status];
 }
 
@@ -1413,6 +1414,8 @@
 	_n = (status & SN) != 0;
 	_v = (status & SV) != 0;
 	_z = (status & SZ) != 0;
+	
+	_cycles += 2;
 }
 
 #pragma mark -
