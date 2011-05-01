@@ -20,7 +20,8 @@
 
 typedef enum {
 	DumpParseWaitingForAddress = 0,
-	DumpParseReadingOps
+	DumpParseReadingOps,
+	DumpParseSkippingComments
 } DumpParseState;
 
 @synthesize delegate;
@@ -66,6 +67,19 @@ typedef enum {
 	
 	for (uint32_t n = 0; n < len; n++) {
 		char c = data[n];
+		
+		if (c == '/' && data[n+1] == '/') {
+			state = DumpParseSkippingComments;
+			continue;
+		}
+		
+		if (state == DumpParseSkippingComments) {
+			if (c == '\n' || c == '\r') {
+				state = DumpParseWaitingForAddress;
+			}
+			
+			continue;
+		}
 		
 		if (c == '\n' || c == '\r' || c == '\t' || c == ' ') {
 			if (state == DumpParseReadingOps && accumulator[0] > 0) {
