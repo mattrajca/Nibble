@@ -788,6 +788,9 @@ static uint16_t gAddr = 0x0;
 	STAssertTrue([_processor c] == 0, @"c should be 0");
 	STAssertTrue([_processor n] == 1, @"n should be 1");
 	STAssertTrue([_processor z] == 0, @"z should be 0");
+	
+	[_processor PHP];
+	[_processor PLP];
 }
 
 - (void)testCPX {
