@@ -10,7 +10,6 @@
 #import "ArchiveDumpOperation.h"
 #import "ParseDumpOperation.h"
 #import "PIA6821+Additions.h"
-#import "UserDefaults.h"
 
 @interface MainWindowController ()
 
@@ -108,7 +107,8 @@ static uint16_t sLastAddr;
 		return;
 	}
 	
-	[[UserDefaults sharedDefaults] addRecentFile:aPath];
+	NSDocumentController *controller = [NSDocumentController sharedDocumentController];
+	[controller noteNewRecentDocumentURL:[NSURL fileURLWithPath:aPath]];
 	
 	ParseDumpOperation *operation = [[ParseDumpOperation alloc] initWithData:data];
 	operation.delegate = self;

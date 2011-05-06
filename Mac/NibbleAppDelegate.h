@@ -12,8 +12,4 @@
 	MainWindowController *_mainWC;
 }
 
-@property (nonatomic, retain) IBOutlet NSMenu *recentFilesMenu;
-
-- (IBAction)clearRecentFiles:(id)sender;
-
 @end

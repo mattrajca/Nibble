@@ -22,7 +22,6 @@
 		C94A6CB91326E94F004C379C /* PIA6821+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C94A6CB81326E94F004C379C /* PIA6821+Additions.m */; };
 		C94A6CBA1326E94F004C379C /* PIA6821+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C94A6CB81326E94F004C379C /* PIA6821+Additions.m */; };
 		C9AC30CB132842D600392B3B /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC30CA132842D600392B3B /* UIView+Additions.m */; };
-		C9AE29CA13513BF40003E85B /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE29C913513BF40003E85B /* UserDefaults.m */; };
 		C9B8564413075167005062FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8564313075167005062FC /* UIKit.framework */; };
 		C9B8564613075167005062FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8564513075167005062FC /* Foundation.framework */; };
 		C9B8564813075167005062FC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8564713075167005062FC /* CoreGraphics.framework */; };
@@ -102,8 +101,6 @@
 		C94A6CB81326E94F004C379C /* PIA6821+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PIA6821+Additions.m"; sourceTree = "<group>"; };
 		C9AC30C9132842D600392B3B /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Additions.h"; path = "../Mac/UIKit/UIView+Additions.h"; sourceTree = "<group>"; };
 		C9AC30CA132842D600392B3B /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Additions.m"; path = "../Mac/UIKit/UIView+Additions.m"; sourceTree = "<group>"; };
-		C9AE29C813513BF40003E85B /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
-		C9AE29C913513BF40003E85B /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
 		C9B8564113075167005062FC /* NibbleTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NibbleTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B8564313075167005062FC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C9B8564513075167005062FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -256,8 +253,6 @@
 				C9B856721307522A005062FC /* MainWindowController.m */,
 				C9B856731307522A005062FC /* NibbleAppDelegate.h */,
 				C9B856741307522A005062FC /* NibbleAppDelegate.m */,
-				C9AE29C813513BF40003E85B /* UserDefaults.h */,
-				C9AE29C913513BF40003E85B /* UserDefaults.m */,
 				C9423788130F653500F835EE /* UIKit */,
 				C9B856751307522A005062FC /* Resources */,
 				C9B8567D1307522A005062FC /* Support */,
@@ -587,7 +582,6 @@
 				C9423791130F670600F835EE /* UIGraphics.m in Sources */,
 				C9249F4D1321AB7200F985B1 /* ParseDumpOperation.m in Sources */,
 				C94A6CB91326E94F004C379C /* PIA6821+Additions.m in Sources */,
-				C9AE29CA13513BF40003E85B /* UserDefaults.m in Sources */,
 				C9F15FE7135C849B0006C5D8 /* ArchiveDumpOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
