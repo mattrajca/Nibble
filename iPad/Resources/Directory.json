@@ -1,0 +1,21 @@
+[ { "description" : "Prints ASCII HEX equivalents of any keyboard character (by Tom Owad)",
+    "identifier" : "ascii",
+    "name" : "ASCII Hex Equivalents"
+  },
+  { "description" : "The classic Game of Life simulation by John Conway",
+    "identifier" : "life",
+    "name" : "Game of Life"
+  },
+  { "description" : "Prints a continuous stream of ASCII characters (by Steve Wozniak)",
+    "identifier" : "gtsr",
+    "name" : "Getting the System Running"
+  },
+  { "description" : "An adventure game by A. Verhille",
+    "identifier" : "little_tower",
+    "name" : "Little Tower"
+  },
+  { "description" : "Lunar Lander for the Apple I",
+    "identifier" : "lunar",
+    "name" : "Lunar Lander"
+  }
+]

@@ -11,25 +11,14 @@
 
 @interface ByteShopViewController ()
 
-- (ProgressView *)progressView;
 - (UIBarButtonItem *)cancelButton;
 
-- (NSOperationQueue *)workQueue;
-
-- (NSString *)cachePathForProgram:(NSString *)identifier;
-- (void)handleError;
-
 - (void)loadPrograms;
-- (void)loadedProgramData:(NSData *)data;
-- (void)loadProgram:(NSString *)identifier;
 
 @end
 
 
 @implementation ByteShopViewController
-
-#define PROGRAMS_URL @"http://the-byte-shop.appspot.com/apps"
-#define SOURCE_URL @"http://the-byte-shop.appspot.com/listSource?identifier=%@"
 
 @synthesize delegate;
 
@@ -39,8 +28,6 @@
 
 - (void)dealloc {
 	[_cancelButton release];
-	[_progressView release];
-	[_workQueue release];
 	[_programs release];
 	
 	[super dealloc];
@@ -53,10 +40,6 @@
 	self.navigationItem.leftBarButtonItem = [self cancelButton];
 	self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"table_background.png"]];
 	self.tableView.rowHeight = 72.0f;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
 	
 	[self loadPrograms];
 }
@@ -69,27 +52,6 @@
 	}
 	
 	return _cancelButton;
-}
-
-- (ProgressView *)progressView {
-	if (!_progressView) {
-		_progressView = [[ProgressView alloc] init];
-	}
-	
-	return _progressView;
-}
-
-- (NSOperationQueue *)workQueue {
-	if (!_workQueue) {
-		_workQueue = [[NSOperationQueue alloc] init];
-		[_workQueue setMaxConcurrentOperationCount:1];
-		
-		[_workQueue addObserver:self forKeyPath:@"operationCount"
-						options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew)
-						context:NULL];
-	}
-	
-	return _workQueue;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -124,134 +86,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSDictionary *program = [_programs objectAtIndex:indexPath.row];
-	[self loadProgram:[program objectForKey:@"identifier"]];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
-						change:(NSDictionary *)change context:(void *)context {
+	NSString *identifier = [program objectForKey:@"identifier"];
 	
-	[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-		
-		BOOL visible = [_workQueue operationCount] > 0;
-		[UIApplication sharedApplication].networkActivityIndicatorVisible = visible;
-		
-	}];
-}
-
-- (NSString *)cachePathForProgram:(NSString *)identifier {
-	NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+	NSString *path = [[NSBundle mainBundle] pathForResource:identifier ofType:@"txt"];
+	NSData *data = [NSData dataWithContentsOfFile:path];
 	
-	if (!path)
-		return nil;
+	[self dismissModalViewControllerAnimated:YES];
 	
-	return [path stringByAppendingFormat:@"/%@.dat", identifier];
-}
-
-- (void)handleError {
-	[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-		
-		if (_progressView) {
-			[_progressView dismiss];
-		}
-		
-	}];
+	if ([delegate respondsToSelector:@selector(byteShopViewController:didLoadData:)]) {
+		[delegate byteShopViewController:self didLoadData:data];
+	}
 }
 
 - (void)loadPrograms {
-	if (_programs) {
-		[_programs release];
-		_programs = nil;
-		
-		[self.tableView reloadData];
-	}
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"Directory" ofType:@"json"];
+	NSData *data = [NSData dataWithContentsOfFile:path];
 	
-	[[self progressView] showInView:self.view];
-	
-	[[self workQueue] addOperationWithBlock:^{
-		
-		NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:PROGRAMS_URL]];
-		
-		if (!data) {
-			NSLog(@"Cannot load program directory");
-			[self handleError];
-			
-			return;
-		}
-		
-		NSArray *programs = [data objectFromJSONData];
-		
-		if (!programs || ![programs isKindOfClass:[NSArray class]]) {
-			NSLog(@"Invalid program directory data");
-			[self handleError];
-			
-			return;
-		}
-		
-		[NSThread sleepForTimeInterval:0.4f];
-		
-		_programs = [programs retain];
-		
-		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-			
-			if (_progressView) {
-				[_progressView dismiss];
-			}
-			
-			[self.tableView reloadData];
-			
-		}];
-		
-	}];
-}
-
-- (void)loadedProgramData:(NSData *)data {
-	if ([self.delegate respondsToSelector:@selector(byteShopViewController:didLoadData:)]) {
-		[self.delegate byteShopViewController:self
-								  didLoadData:[[data retain] autorelease]];
-	}
-	
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-- (void)loadProgram:(NSString *)identifier {
-	NSData *data = [NSData dataWithContentsOfFile:[self cachePathForProgram:identifier]];
-	
-	if (data) {
-		[self loadedProgramData:data];
-		return;
-	}
-	
-	[[self progressView] showInView:self.view];
-	
-	[[self workQueue] addOperationWithBlock:^{
-		
-		NSString *strURL = [NSString stringWithFormat:SOURCE_URL, identifier];
-		NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:strURL]];
-		
-		if (!data) {
-			NSLog(@"Cannot load program's source");
-			[self handleError];
-			
-			return;
-		}
-		
-		[data writeToFile:[self cachePathForProgram:identifier] atomically:YES];
-		
-		[NSThread sleepForTimeInterval:0.4f];
-		
-		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-			
-			if (_progressView) {
-				[_progressView dismiss];
-			}
-			
-			[self performSelector:@selector(loadedProgramData:)
-					   withObject:data
-					   afterDelay:0.2f];
-			
-		}];
-		
-	}];
+	_programs = [[data objectFromJSONData] retain];
 }
 
 - (void)cancel:(id)sender {

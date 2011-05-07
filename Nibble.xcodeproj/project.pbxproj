@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C90A9D04136DFE8700D8BBCF /* Reset.png in Resources */ = {isa = PBXBuildFile; fileRef = C90A9D03136DFE8700D8BBCF /* Reset.png */; };
+		C912D0931374C101009AF92A /* ascii.txt in Resources */ = {isa = PBXBuildFile; fileRef = C912D08E1374C101009AF92A /* ascii.txt */; };
+		C912D0941374C101009AF92A /* gtsr.txt in Resources */ = {isa = PBXBuildFile; fileRef = C912D08F1374C101009AF92A /* gtsr.txt */; };
+		C912D0951374C101009AF92A /* life.txt in Resources */ = {isa = PBXBuildFile; fileRef = C912D0901374C101009AF92A /* life.txt */; };
+		C912D0961374C101009AF92A /* little_tower.txt in Resources */ = {isa = PBXBuildFile; fileRef = C912D0911374C101009AF92A /* little_tower.txt */; };
+		C912D0971374C101009AF92A /* lunar.txt in Resources */ = {isa = PBXBuildFile; fileRef = C912D0921374C101009AF92A /* lunar.txt */; };
+		C912D09A1374C2D9009AF92A /* Directory.json in Resources */ = {isa = PBXBuildFile; fileRef = C912D0991374C2D9009AF92A /* Directory.json */; };
 		C91C0D0113120473003394FA /* KeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C0D0013120473003394FA /* KeyboardLayout.m */; };
-		C9222569132D38E500E32599 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9222568132D38E500E32599 /* ProgressView.m */; };
 		C92240AF132302F900A5359F /* ByteShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92240AE132302F900A5359F /* ByteShopViewController.m */; };
 		C92240B713230DFB00A5359F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C92240B413230DFB00A5359F /* JSONKit.m */; };
 		C9249F4D1321AB7200F985B1 /* ParseDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9249F4C1321AB7200F985B1 /* ParseDumpOperation.m */; };
@@ -77,10 +82,14 @@
 
 /* Begin PBXFileReference section */
 		C90A9D03136DFE8700D8BBCF /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
+		C912D08E1374C101009AF92A /* ascii.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ascii.txt; sourceTree = "<group>"; };
+		C912D08F1374C101009AF92A /* gtsr.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gtsr.txt; sourceTree = "<group>"; };
+		C912D0901374C101009AF92A /* life.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = life.txt; sourceTree = "<group>"; };
+		C912D0911374C101009AF92A /* little_tower.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = little_tower.txt; sourceTree = "<group>"; };
+		C912D0921374C101009AF92A /* lunar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lunar.txt; sourceTree = "<group>"; };
+		C912D0991374C2D9009AF92A /* Directory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Directory.json; sourceTree = "<group>"; };
 		C91C0CFF13120473003394FA /* KeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardLayout.h; sourceTree = "<group>"; };
 		C91C0D0013120473003394FA /* KeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardLayout.m; sourceTree = "<group>"; };
-		C9222567132D38E500E32599 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
-		C9222568132D38E500E32599 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		C92240AD132302F900A5359F /* ByteShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteShopViewController.h; sourceTree = "<group>"; };
 		C92240AE132302F900A5359F /* ByteShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ByteShopViewController.m; sourceTree = "<group>"; };
 		C92240B213230DFB00A5359F /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -192,6 +201,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C912D08D1374C101009AF92A /* Software */ = {
+			isa = PBXGroup;
+			children = (
+				C912D08E1374C101009AF92A /* ascii.txt */,
+				C912D08F1374C101009AF92A /* gtsr.txt */,
+				C912D0901374C101009AF92A /* life.txt */,
+				C912D0911374C101009AF92A /* little_tower.txt */,
+				C912D0921374C101009AF92A /* lunar.txt */,
+			);
+			path = Software;
+			sourceTree = SOURCE_ROOT;
+		};
 		C92240B113230DFB00A5359F /* JSONKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,8 +335,6 @@
 				C9C34E581311DF14001DFE41 /* KeyButton.m */,
 				C9B85696130753B1005062FC /* NibbleTouchAppDelegate.h */,
 				C9B85697130753B1005062FC /* NibbleTouchAppDelegate.m */,
-				C9222567132D38E500E32599 /* ProgressView.h */,
-				C9222568132D38E500E32599 /* ProgressView.m */,
 				C9B85698130753B1005062FC /* RootViewController.h */,
 				C9B85699130753B1005062FC /* RootViewController.m */,
 				C9E21A37132BC86A00987AB0 /* UINavigationBar+Style.h */,
@@ -331,7 +350,9 @@
 		C9B8569A130753B1005062FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C912D08D1374C101009AF92A /* Software */,
 				C9C34E5E1311ECA0001DFE41 /* background.png */,
+				C912D0991374C2D9009AF92A /* Directory.json */,
 				C9B8569B130753B1005062FC /* InfoPlist.strings */,
 				C9B8569D130753B1005062FC /* MainWindow.xib */,
 				C9E21A34132BC84700987AB0 /* nav_bar.png */,
@@ -499,6 +520,12 @@
 				C9E21A35132BC84700987AB0 /* nav_bar.png in Resources */,
 				C9E21A3B132BC9E000987AB0 /* table_background.png in Resources */,
 				C9E21A3D132BCD7100987AB0 /* selected_row.png in Resources */,
+				C912D0931374C101009AF92A /* ascii.txt in Resources */,
+				C912D0941374C101009AF92A /* gtsr.txt in Resources */,
+				C912D0951374C101009AF92A /* life.txt in Resources */,
+				C912D0961374C101009AF92A /* little_tower.txt in Resources */,
+				C912D0971374C101009AF92A /* lunar.txt in Resources */,
+				C912D09A1374C2D9009AF92A /* Directory.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +589,6 @@
 				C94A6CBA1326E94F004C379C /* PIA6821+Additions.m in Sources */,
 				C9AC30CB132842D600392B3B /* UIView+Additions.m in Sources */,
 				C9E21A39132BC86A00987AB0 /* UINavigationBar+Style.m in Sources */,
-				C9222569132D38E500E32599 /* ProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

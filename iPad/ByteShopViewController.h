@@ -5,14 +5,9 @@
 //  Copyright Matt Rajca 2011. All rights reserved.
 //
 
-#import "ProgressView.h"
-
 @interface ByteShopViewController : UITableViewController {
   @private
 	UIBarButtonItem *_cancelButton;
-	ProgressView *_progressView;
-	
-	NSOperationQueue *_workQueue;
 	NSArray *_programs;
 }
 
