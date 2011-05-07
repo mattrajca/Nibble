@@ -909,7 +909,9 @@
 			}];
 			break;
 		default:
-			NSLog(@"Unknown code: 0x%X", op);
+			if (op != 0x0)
+				NSLog(@"Unknown code: 0x%X", op);
+			
 			break;
 	}
 }
