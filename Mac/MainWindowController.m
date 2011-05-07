@@ -210,13 +210,18 @@ static uint16_t sLastAddr;
 #pragma mark -
 
 - (IBAction)reset:(id)sender {
+	BOOL hard = ([NSEvent modifierFlags] & NSAlternateKeyMask) == NSAlternateKeyMask;
+	
 	[_processor stop];
 	
-	[_memory reset]; // ROM has to be reloaded before running M6502
+	if (hard)
+		[_memory reset]; // ROM has to be reloaded before running M6502
+	
 	[_pia reset];
 	[_screenView reset];
 	
-	[self loadROM];
+	if (hard)
+		[self loadROM];
 	
 	[_processor reset];
 	[_processor run];
