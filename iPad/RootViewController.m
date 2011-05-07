@@ -63,18 +63,21 @@ static uint16_t sLastAddr;
 #pragma mark View
 
 - (void)viewDidLoad {
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+	UIImage *image = [UIImage imageNamed:@"Background.png"];
+	self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 	self.keyboardView.delegate = self;
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(activated)
-												 name:UIApplicationDidBecomeActiveNotification
-											   object:nil];
+	NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(deactivated)
-												 name:UIApplicationWillResignActiveNotification
-											   object:nil];
+	[center addObserver:self
+			   selector:@selector(activated)
+				   name:UIApplicationDidBecomeActiveNotification
+				 object:nil];
+	
+	[center addObserver:self
+			   selector:@selector(deactivated)
+				   name:UIApplicationWillResignActiveNotification
+				 object:nil];
 	
 	[self setupByteShopButton];
 	[self setupScreens];
@@ -268,7 +271,9 @@ static uint16_t sLastAddr;
 	KeyStruct key = [self keyForIndexPath:path];
 	
 	if (!strcmp(key.title, "RESET")) {
-		[self performSelector:@selector(showResetSheet:) withObject:button afterDelay:0.0f];
+		[self performSelector:@selector(showResetSheet:)
+				   withObject:button
+				   afterDelay:0.0f];
 	}
 	else if (keyboardView.isShiftDown) {
 		if (key.sTitle == NULL)
@@ -307,7 +312,9 @@ static uint16_t sLastAddr;
 }
 
 - (void)loadROM {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"apple1" ofType:@"rom"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"apple1"
+													 ofType:@"rom"];
+	
 	NSData *romData = [NSData dataWithContentsOfFile:path];
 	
 	[_memory loadMemory:romData atAddress:ROM_LOC];
@@ -348,8 +355,10 @@ static uint16_t sLastAddr;
 	NSString *cancelButton = NSLocalizedString(@"OK", nil);
 	NSString *runButton = NSLocalizedString(@"Run", nil);
 	
+	NSString *content = [NSString stringWithFormat:message, addr];
+	
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-													message:[NSString stringWithFormat:message, addr]
+													message:content
 												   delegate:self
 										  cancelButtonTitle:cancelButton
 										  otherButtonTitles:runButton, nil];

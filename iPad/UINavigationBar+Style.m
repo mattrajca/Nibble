@@ -10,7 +10,7 @@
 @implementation UINavigationBar (Style)
 
 - (void)drawRect:(CGRect)rect {
-	[[UIImage imageNamed:@"nav_bar.png"] drawAsPatternInRect:[self bounds]];
+	[[UIImage imageNamed:@"Bar.png"] drawAsPatternInRect:[self bounds]];
 }
 
 @end

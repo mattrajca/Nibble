@@ -38,8 +38,10 @@
 	
 	self.title = NSLocalizedString(@"Byte Shop", nil);
 	self.navigationItem.leftBarButtonItem = [self cancelButton];
-	self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"table_background.png"]];
 	self.tableView.rowHeight = 72.0f;
+	
+	UIImage *image = [UIImage imageNamed:@"TableBackground.png"];
+	self.tableView.backgroundColor = [UIColor colorWithPatternImage:image];
 	
 	[self loadPrograms];
 }
@@ -68,12 +70,17 @@
 									   reuseIdentifier:CellIdentifier] autorelease];
 		
 		UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
-		view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"selected_row.png"]];
+		
+		UIImage *image = [UIImage imageNamed:@"SelectedRow.png"];
+		view.backgroundColor = [UIColor colorWithPatternImage:image];
 		
 		cell.selectedBackgroundView = view;
 		[view release];
 		
-		cell.textLabel.textColor = [UIColor colorWithRed:78/255.0f green:75/255.0f blue:66/255.0f alpha:1.0f];
+		cell.textLabel.textColor = [UIColor colorWithRed:78/255.0f
+												   green:75/255.0f
+													blue:66/255.0f
+												   alpha:1.0f];
 	}
 	
 	NSDictionary *program = [_programs objectAtIndex:indexPath.row];
@@ -88,7 +95,9 @@
 	NSDictionary *program = [_programs objectAtIndex:indexPath.row];
 	NSString *identifier = [program objectForKey:@"identifier"];
 	
-	NSString *path = [[NSBundle mainBundle] pathForResource:identifier ofType:@"txt"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:identifier
+													 ofType:@"txt"];
+	
 	NSData *data = [NSData dataWithContentsOfFile:path];
 	
 	[self dismissModalViewControllerAnimated:YES];
@@ -99,7 +108,9 @@
 }
 
 - (void)loadPrograms {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"Directory" ofType:@"json"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"Directory"
+													 ofType:@"json"];
+	
 	NSData *data = [NSData dataWithContentsOfFile:path];
 	
 	_programs = [[data objectFromJSONData] retain];

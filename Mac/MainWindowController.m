@@ -67,7 +67,9 @@ static uint16_t sLastAddr;
 }
 
 - (void)loadROM {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"apple1" ofType:@"rom"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"apple1"
+													 ofType:@"rom"];
+	
 	NSData *romData = [NSData dataWithContentsOfFile:path];
 	
 	[_memory loadMemory:romData atAddress:ROM_LOC];

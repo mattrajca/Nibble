@@ -70,7 +70,9 @@
 		return;
 	}
 	
-	if (character == 0x0A || character == 0x0D || character == '\r' || character == '\n') {
+	if (character == 0x0A || character == 0x0D ||
+		character == '\r' || character == '\n') {
+		
 		[self moveToNextLine];
 		return;
 	}
@@ -115,7 +117,8 @@
 	[[UIColor blackColor] set];
 	
 #if TARGET_OS_IPHONE
-	[[UIBezierPath bezierPathWithRoundedRect:[self bounds] cornerRadius:8.0f] fill];
+	[[UIBezierPath bezierPathWithRoundedRect:[self bounds]
+								cornerRadius:8.0f] fill];
 #else
 	UIRectFill([self bounds]);
 #endif
