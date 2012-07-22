@@ -12,7 +12,7 @@
 @implementation ArchiveDumpOperation
 
 - (id)initWithMemory:(Memory *)memory
-				path:(NSString *)aPath
+				path:(NSURL *)aPath
 		 fromAddress:(uint16_t)fromAddr
 		   toAddress:(uint16_t)toAddr {
 	
@@ -51,7 +51,7 @@
 	}
 	
 	NSData *data = [string dataUsingEncoding:NSASCIIStringEncoding];
-	[data writeToFile:_path atomically:YES];
+	[data writeToURL:_path atomically:YES];
 	
 	[pool drain];
 }

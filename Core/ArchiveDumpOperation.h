@@ -10,12 +10,12 @@
 @interface ArchiveDumpOperation : NSOperation {
   @private
 	Memory *_memory;
-	NSString *_path;
+	NSURL *_path;
 	uint16_t _fromAddr, _toAddr;
 }
 
 - (id)initWithMemory:(Memory *)memory
-				path:(NSString *)aPath
+				path:(NSURL *)aPath
 		 fromAddress:(uint16_t)fromAddr
 		   toAddress:(uint16_t)toAddr;
 

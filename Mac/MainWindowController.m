@@ -192,7 +192,7 @@ static uint16_t sLastAddr;
 					  }];
 }
 
-- (void)saveMemoryDumpFileToPath:(NSString *)aPath
+- (void)saveMemoryDumpFileToPath:(NSURL *)aPath
 					 fromAddress:(uint16_t)fromAddr
 					   toAddress:(uint16_t)toAddr {
 	
