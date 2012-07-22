@@ -20,9 +20,9 @@
 
 @property (nonatomic, retain) IBOutlet ScreenView *screenView;
 
-- (void)loadMemoryDumpFileAtPath:(NSString *)aPath;
+- (void)loadMemoryDumpFileAtPath:(NSURL *)aPath;
 
-- (void)saveMemoryDumpFileToPath:(NSString *)aPath
+- (void)saveMemoryDumpFileToPath:(NSURL *)aPath
 					 fromAddress:(uint16_t)fromAddr
 					   toAddress:(uint16_t)toAddr;
 

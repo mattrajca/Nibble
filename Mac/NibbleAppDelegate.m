@@ -24,7 +24,7 @@
 }
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
-	[_mainWC loadMemoryDumpFileAtPath:filename];
+	[_mainWC loadMemoryDumpFileAtPath:[NSURL fileURLWithPath:filename]];
 	
 	return YES;
 }

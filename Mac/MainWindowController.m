@@ -95,14 +95,13 @@ static uint16_t sLastAddr;
 						  if (result != NSFileHandlingPanelOKButton)
 							  return;
 						  
-						  NSString *path = [openPanel filename];
-						  [self loadMemoryDumpFileAtPath:path];
+						  [self loadMemoryDumpFileAtPath:[openPanel URL]];
 						  
 					  }];
 }
 
-- (void)loadMemoryDumpFileAtPath:(NSString *)aPath {
-	NSData *data = [NSData dataWithContentsOfFile:aPath];
+- (void)loadMemoryDumpFileAtPath:(NSURL *)aPath {
+	NSData *data = [NSData dataWithContentsOfURL:aPath];
 	
 	if (!data) {
 		NSLog(@"Cannot load memory dump file");
@@ -110,7 +109,7 @@ static uint16_t sLastAddr;
 	}
 	
 	NSDocumentController *controller = [NSDocumentController sharedDocumentController];
-	[controller noteNewRecentDocumentURL:[NSURL fileURLWithPath:aPath]];
+	[controller noteNewRecentDocumentURL:aPath];
 	
 	ParseDumpOperation *operation = [[ParseDumpOperation alloc] initWithData:data];
 	operation.delegate = self;
@@ -180,15 +179,13 @@ static uint16_t sLastAddr;
 						  if (result != NSFileHandlingPanelOKButton)
 							  return;
 						  
-						  NSString *path = [savePanel filename];
-						  
 						  NSTextField *fromField = [[savePanel accessoryView] viewWithTag:4];
 						  NSTextField *toField = [[savePanel accessoryView] viewWithTag:5];
 						  
 						  uint16_t fromAddr = [self addressFromTextField:fromField];
 						  uint16_t toAddr = [self addressFromTextField:toField];
 						  
-						  [self saveMemoryDumpFileToPath:path
+						  [self saveMemoryDumpFileToPath:[savePanel URL]
 											 fromAddress:fromAddr
 											   toAddress:toAddr];
 						  
