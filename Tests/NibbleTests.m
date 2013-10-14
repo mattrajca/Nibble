@@ -44,10 +44,7 @@ static uint16_t gAddr = 0x0;
 }
 
 - (void)tearDown {
-	[_processor release];
 	_processor = nil;
-	
-	[_memory release];
 	_memory = nil;
 }
 
