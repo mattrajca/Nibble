@@ -99,7 +99,7 @@
 	
 	NSData *data = [NSData dataWithContentsOfFile:path];
 	
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:NULL];
 	
 	if ([delegate respondsToSelector:@selector(byteShopViewController:didLoadData:)]) {
 		[delegate byteShopViewController:self didLoadData:data];
@@ -118,7 +118,7 @@
 }
 
 - (void)cancel:(id)sender {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

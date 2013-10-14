@@ -62,7 +62,7 @@
 		[secondaryTitle drawInRect:CGRectMake(0.0f, 2.0f, self.bounds.size.width, 20.0f)
 						  withFont:[UIFont systemFontOfSize:17.0f]
 					 lineBreakMode:0
-						 alignment:UITextAlignmentCenter];
+						 alignment:NSTextAlignmentCenter];
 	}
 	
 	CGFloat ty = secondaryTitle ? 22.0f : 12.0f;
@@ -70,7 +70,7 @@
 	[title drawInRect:CGRectMake(0.0f, ty, self.bounds.size.width, 20.0f)
 			 withFont:TITLE_FONT
 		lineBreakMode:0
-			alignment:UITextAlignmentCenter];
+			alignment:NSTextAlignmentCenter];
 }
 
 - (void)sizeToFit {
@@ -128,7 +128,8 @@
 	self.isHighlighted = NO;
 	_resetShift = NO;
 	
-	_tapHandler(self, KeyButtonStateReleased);
+	if (_tapHandler)
+		_tapHandler(self, KeyButtonStateReleased);
 }
 
 @end

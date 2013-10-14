@@ -422,7 +422,7 @@ static uint16_t sLastAddr;
 	
 	[vc release];
 	
-	[self presentModalViewController:controller animated:YES];
+	[self presentViewController:controller animated:YES completion:NULL];
 	[controller release];
 }
 
