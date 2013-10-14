@@ -76,11 +76,6 @@
 - (void)dealloc {
 	if (_timer) {
 		dispatch_source_cancel(_timer);
-		dispatch_release(_timer);
-	}
-	
-	if (_queue) {
-		dispatch_release(_queue);
 	}
 }
 
@@ -90,7 +85,6 @@
 - (void)stop {
 	if (_timer) {
 		dispatch_source_cancel(_timer);
-		dispatch_release(_timer);
 		_timer = NULL;
 	}
 }

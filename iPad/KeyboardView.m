@@ -34,12 +34,6 @@
 	return self;
 }
 
-- (void)dealloc {
-	[_keys release];
-	
-	[super dealloc];
-}
-
 - (void)setDelegate:(id < KeyboardViewDelegate >)aDelegate {
 	if (delegate != aDelegate) {
 		delegate = aDelegate;
@@ -87,10 +81,7 @@
 			[delegate keyboardView:self configureButton:button atIndexPath:path];
 			
 			[_keys addObject:button];
-			[button release];
-			
 			[views addObject:button];
-			[button release];
 			
 			width += button.bounds.size.width + KEY_MARGIN;
 		}
@@ -109,8 +100,6 @@
 			
 			pos += button.layer.bounds.size.width + KEY_MARGIN;
 		}
-		
-		[views release];
 	}
 }
 

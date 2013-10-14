@@ -23,7 +23,7 @@
 	ScreenView *_screenView;
 }
 
-@property (nonatomic, retain) IBOutlet KeyButton *byteShopButton;
-@property (nonatomic, retain) IBOutlet KeyboardView *keyboardView;
+@property (nonatomic, strong) IBOutlet KeyButton *byteShopButton;
+@property (nonatomic, strong) IBOutlet KeyboardView *keyboardView;
 
 @end

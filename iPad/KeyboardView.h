@@ -17,7 +17,7 @@
 
 @property (nonatomic, readonly) BOOL isShiftDown;
 
-@property (nonatomic, assign) id < KeyboardViewDelegate > delegate;
+@property (nonatomic, weak) id < KeyboardViewDelegate > delegate;
 
 - (void)reloadData;
 

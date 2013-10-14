@@ -40,14 +40,6 @@
 	return self;
 }
 
-- (void)dealloc {
-    [title release];
-	[secondaryTitle release];
-	[_tapHandler release];
-	
-    [super dealloc];
-}
-
 - (void)configureView {
 	self.backgroundColor = [UIColor clearColor];
 	self.layer.cornerRadius = 4.0f;
@@ -81,11 +73,6 @@
 }
 
 - (void)enableTapHandler:(TapHandlerBlock)block {
-	if (_tapHandler) {
-		[_tapHandler release];
-		_tapHandler = NULL;
-	}
-	
 	_tapHandler = [block copy];
 }
 

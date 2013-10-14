@@ -24,13 +24,6 @@
 	return [super initWithStyle:UITableViewStylePlain];
 }
 
-- (void)dealloc {
-	[_cancelButton release];
-	[_programs release];
-	
-	[super dealloc];
-}
-
 - (void)loadView {
 	[super loadView];
 	
@@ -65,8 +58,8 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
 	if (!cell) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-									   reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+									   reuseIdentifier:CellIdentifier];
 		
 		UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
 		
@@ -74,7 +67,6 @@
 		view.backgroundColor = [UIColor colorWithPatternImage:image];
 		
 		cell.selectedBackgroundView = view;
-		[view release];
 		
 		cell.textLabel.textColor = [UIColor colorWithRed:78/255.0f
 												   green:75/255.0f
@@ -114,7 +106,7 @@
 	
 	NSArray *programs = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 	
-	_programs = [programs retain];
+	_programs = programs;
 }
 
 - (void)cancel:(id)sender {

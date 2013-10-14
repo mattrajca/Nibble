@@ -45,20 +45,6 @@ static uint16_t sLastAddr;
 
 @synthesize byteShopButton, keyboardView;
 
-- (void)dealloc {
-	[_memory release];
-	[_processor release];
-	[_pia release];
-	
-	[_externalWindow release];
-	[_screenView release];
-	
-	[byteShopButton release];
-	[keyboardView release];
-	
-	[super dealloc];
-}
-
 #pragma mark -
 #pragma mark View
 
@@ -136,7 +122,6 @@ static uint16_t sLastAddr;
 
 - (void)setupMainScreen {
 	if (_externalWindow) {
-		[_externalWindow release];
 		_externalWindow = nil;
 	}
 	
@@ -157,7 +142,6 @@ static uint16_t sLastAddr;
 	screen.currentMode = [screen.availableModes lastObject];
 	
 	if (_externalWindow) {
-		[_externalWindow release];
 		_externalWindow = nil;
 	}
 	
@@ -364,7 +348,6 @@ static uint16_t sLastAddr;
 										  otherButtonTitles:runButton, nil];
 	
 	[alert show];
-	[alert release];
 }
 
 - (void)byteShopViewController:(ByteShopViewController *)vc didLoadData:(NSData *)data {
@@ -372,7 +355,6 @@ static uint16_t sLastAddr;
 	operation.delegate = self;
 	
 	[[NSOperationQueue mainQueue] addOperation:operation];
-	[operation release];
 }
 
 #pragma mark -
@@ -386,7 +368,6 @@ static uint16_t sLastAddr;
 											  otherButtonTitles:@"Reset", @"Hard Reset", nil];
 	
 	[sheet showFromRect:[sender frame] inView:self.keyboardView animated:YES];
-	[sheet release];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
@@ -420,10 +401,7 @@ static uint16_t sLastAddr;
 	controller.navigationBar.tintColor = [UIColor darkGrayColor];
 	controller.modalPresentationStyle = UIModalPresentationFormSheet;
 	
-	[vc release];
-	
 	[self presentViewController:controller animated:YES completion:NULL];
-	[controller release];
 }
 
 #pragma mark -
