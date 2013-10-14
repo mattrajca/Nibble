@@ -21,7 +21,6 @@
 		C912D0A41374C74A009AF92A /* TableBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C912D09F1374C74A009AF92A /* TableBackground.png */; };
 		C91C0D0113120473003394FA /* KeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C0D0013120473003394FA /* KeyboardLayout.m */; };
 		C92240AF132302F900A5359F /* ByteShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92240AE132302F900A5359F /* ByteShopViewController.m */; };
-		C92240B713230DFB00A5359F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C92240B413230DFB00A5359F /* JSONKit.m */; };
 		C9249F4D1321AB7200F985B1 /* ParseDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9249F4C1321AB7200F985B1 /* ParseDumpOperation.m */; };
 		C9249F4E1321AB7200F985B1 /* ParseDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9249F4C1321AB7200F985B1 /* ParseDumpOperation.m */; };
 		C9423786130F651400F835EE /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9423785130F651400F835EE /* ScreenView.m */; };
@@ -97,10 +96,6 @@
 		C91C0D0013120473003394FA /* KeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardLayout.m; sourceTree = "<group>"; };
 		C92240AD132302F900A5359F /* ByteShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteShopViewController.h; sourceTree = "<group>"; };
 		C92240AE132302F900A5359F /* ByteShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ByteShopViewController.m; sourceTree = "<group>"; };
-		C92240B213230DFB00A5359F /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
-		C92240B313230DFB00A5359F /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		C92240B413230DFB00A5359F /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		C92240B513230DFB00A5359F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		C9249F4B1321AB7200F985B1 /* ParseDumpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseDumpOperation.h; sourceTree = "<group>"; };
 		C9249F4C1321AB7200F985B1 /* ParseDumpOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseDumpOperation.m; sourceTree = "<group>"; };
 		C9423784130F651400F835EE /* ScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
@@ -213,17 +208,6 @@
 			path = Software;
 			sourceTree = SOURCE_ROOT;
 		};
-		C92240B113230DFB00A5359F /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				C92240B213230DFB00A5359F /* CHANGELOG.md */,
-				C92240B313230DFB00A5359F /* JSONKit.h */,
-				C92240B413230DFB00A5359F /* JSONKit.m */,
-				C92240B513230DFB00A5359F /* README.md */,
-			);
-			path = JSONKit;
-			sourceTree = "<group>";
-		};
 		C9423783130F64FA00F835EE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +235,6 @@
 			children = (
 				C9F15FE5135C849B0006C5D8 /* ArchiveDumpOperation.h */,
 				C9F15FE6135C849B0006C5D8 /* ArchiveDumpOperation.m */,
-				C92240B113230DFB00A5359F /* JSONKit */,
 				C9B85663130751D2005062FC /* M6502+Private.h */,
 				C9B85664130751D2005062FC /* M6502.h */,
 				C9B85665130751D2005062FC /* M6502.m */,
@@ -586,7 +569,6 @@
 				C91C0D0113120473003394FA /* KeyboardLayout.m in Sources */,
 				C9249F4E1321AB7200F985B1 /* ParseDumpOperation.m in Sources */,
 				C92240AF132302F900A5359F /* ByteShopViewController.m in Sources */,
-				C92240B713230DFB00A5359F /* JSONKit.m in Sources */,
 				C94A6CBA1326E94F004C379C /* PIA6821+Additions.m in Sources */,
 				C9AC30CB132842D600392B3B /* UIView+Additions.m in Sources */,
 				C9E21A39132BC86A00987AB0 /* UINavigationBar+Style.m in Sources */,

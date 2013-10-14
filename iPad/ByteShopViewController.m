@@ -7,8 +7,6 @@
 
 #import "ByteShopViewController.h"
 
-#import "JSONKit.h"
-
 @interface ByteShopViewController ()
 
 - (UIBarButtonItem *)cancelButton;
@@ -114,7 +112,9 @@
 	
 	NSData *data = [NSData dataWithContentsOfFile:path];
 	
-	_programs = [[data objectFromJSONData] retain];
+	NSArray *programs = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+	
+	_programs = [programs retain];
 }
 
 - (void)cancel:(id)sender {
