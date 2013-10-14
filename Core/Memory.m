@@ -24,19 +24,8 @@
     return self;
 }
 
-- (void)finalize {
-	free(_buffer);
-	
-	[super finalize];
-}
-
 - (void)dealloc {
 	free(_buffer);
-	
-	[_writeWatch release];
-	[_readWatch release];
-	
-    [super dealloc];
 }
 
 - (void)reset {
@@ -103,12 +92,12 @@
 }
 
 - (void)watchMemoryAtAddress:(uint16_t)addr readBlock:(MemReadBlock)block {
-	[_readWatch setObject:[[block copy] autorelease]
+	[_readWatch setObject:[block copy]
 				   forKey:[NSNumber numberWithUnsignedShort:addr]];
 }
 
 - (void)watchMemoryAtAddress:(uint16_t)addr writeBlock:(MemWriteBlock)block {
-	[_writeWatch setObject:[[block copy] autorelease]
+	[_writeWatch setObject:[block copy]
 					forKey:[NSNumber numberWithUnsignedShort:addr]];
 }
 

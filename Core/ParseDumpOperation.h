@@ -10,7 +10,7 @@
 	NSData *_data;
 }
 
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, weak) id delegate;
 
 - (id)initWithData:(NSData *)data;
 

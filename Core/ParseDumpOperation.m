@@ -31,116 +31,111 @@ typedef enum {
 	
 	self = [super init];
 	if (self) {
-		_data = [data retain];
+		_data = data;
 	}
 	return self;
 }
 
-- (void)dealloc {
-	[_data release];
-	
-	[super dealloc];
-}
 
 - (void)main {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
 	
-	uint32_t len = (uint32_t) [_data length];
-	
-	char *data = malloc(len);
-	[_data getBytes:data length:len];
-	
-	DumpParseState state = DumpParseWaitingForAddress;
-	
-	uint16_t addr = 0;
-	uint32_t firstAddr = UINT32_MAX;
-	
-	uint8_t bytes[BYTES_PER_LINE];
-	uint32_t btidx = 0;
-	
-	CLEAR_BYTES;
-	
-	char accumulator[ACCUM_WIDTH];
-	uint32_t idx = 0;
-	
-	CLEAR_ACCUM;
-	
-	for (uint32_t n = 0; n < len; n++) {
-		char c = data[n];
+		uint32_t len = (uint32_t) [_data length];
 		
-		if (c == '/' && data[n+1] == '/') {
-			state = DumpParseSkippingComments;
-			continue;
-		}
+		char *data = malloc(len);
+		[_data getBytes:data length:len];
 		
-		if (state == DumpParseSkippingComments) {
-			if (c == '\n' || c == '\r') {
-				state = DumpParseWaitingForAddress;
+		DumpParseState state = DumpParseWaitingForAddress;
+		
+		uint16_t addr = 0;
+		uint32_t firstAddr = UINT32_MAX;
+		
+		uint8_t bytes[BYTES_PER_LINE];
+		uint32_t btidx = 0;
+		
+		CLEAR_BYTES;
+		
+		char accumulator[ACCUM_WIDTH];
+		uint32_t idx = 0;
+		
+		CLEAR_ACCUM;
+		
+		for (uint32_t n = 0; n < len; n++) {
+			char c = data[n];
+			
+			if (c == '/' && data[n+1] == '/') {
+				state = DumpParseSkippingComments;
+				continue;
 			}
 			
-			continue;
-		}
-		
-		if (c == '\n' || c == '\r' || c == '\t' || c == ' ') {
-			if (state == DumpParseReadingOps && accumulator[0] > 0) {
-				bytes[btidx++] = strtol(accumulator, NULL, 16);
+			if (state == DumpParseSkippingComments) {
+				if (c == '\n' || c == '\r') {
+					state = DumpParseWaitingForAddress;
+				}
+				
+				continue;
+			}
+			
+			if (c == '\n' || c == '\r' || c == '\t' || c == ' ') {
+				if (state == DumpParseReadingOps && accumulator[0] > 0) {
+					bytes[btidx++] = strtol(accumulator, NULL, 16);
+					
+					CLEAR_ACCUM;
+				}
+				
+				if (c == '\n' || c == '\r') {
+					NSData *data = [NSData dataWithBytes:bytes length:btidx];
+					
+					[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+						
+						if ([self.delegate respondsToSelector:@selector(dumpParseOperation:
+																		didEncounterBytes:
+																		atAddress:)]) {
+							
+							[self.delegate dumpParseOperation:self
+											didEncounterBytes:data
+													atAddress:addr];
+						}
+						
+					}];
+					
+					CLEAR_BYTES;
+					
+					state = DumpParseWaitingForAddress;
+				}
+				
+				continue;
+			}
+			
+			if (state == DumpParseWaitingForAddress && c == ':') {
+				addr = strtol(accumulator, NULL, 16);
+				
+				if (firstAddr == UINT32_MAX)
+					firstAddr = addr;
 				
 				CLEAR_ACCUM;
+				
+				state = DumpParseReadingOps;
+				
+				continue;
 			}
 			
-			if (c == '\n' || c == '\r') {
-				NSData *data = [NSData dataWithBytes:bytes length:btidx];
+			accumulator[idx++] = c;
+		}
+		
+		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+			
+			if ([self.delegate respondsToSelector:@selector(dumpParseOperation:
+															didFinishParseFromAddress:)]) {
 				
-				[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-					
-					if ([self.delegate respondsToSelector:@selector(dumpParseOperation:
-																	didEncounterBytes:
-																	atAddress:)]) {
-						
-						[self.delegate dumpParseOperation:self
-										didEncounterBytes:data
-												atAddress:addr];
-					}
-					
-				}];
-				
-				CLEAR_BYTES;
-				
-				state = DumpParseWaitingForAddress;
+				[self.delegate dumpParseOperation:self didFinishParseFromAddress:firstAddr];
 			}
 			
-			continue;
-		}
+		}];
 		
-		if (state == DumpParseWaitingForAddress && c == ':') {
-			addr = strtol(accumulator, NULL, 16);
-			
-			if (firstAddr == UINT32_MAX)
-				firstAddr = addr;
-			
-			CLEAR_ACCUM;
-			
-			state = DumpParseReadingOps;
-			
-			continue;
-		}
-		
-		accumulator[idx++] = c;
+		free(data);
+	
 	}
-	
-	[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-		
-		if ([self.delegate respondsToSelector:@selector(dumpParseOperation:
-														didFinishParseFromAddress:)]) {
-			
-			[self.delegate dumpParseOperation:self didFinishParseFromAddress:firstAddr];
-		}
-		
-	}];
-	
-	free(data);
-	
-	[pool drain];
 }
 
 @end

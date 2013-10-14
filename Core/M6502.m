@@ -67,15 +67,13 @@
 	
 	self = [super init];
 	if (self) {
-		_memory = [someMemory retain];
+		_memory = someMemory;
 		[self reset];
 	}
 	return self;
 }
 
 - (void)dealloc {
-	[_memory release];
-	
 	if (_timer) {
 		dispatch_source_cancel(_timer);
 		dispatch_release(_timer);
@@ -84,8 +82,6 @@
 	if (_queue) {
 		dispatch_release(_queue);
 	}
-	
-	[super dealloc];
 }
 
 #pragma mark -
@@ -145,302 +141,361 @@
 	uint8_t op = [_memory readByteAtAddress:_pc++];
 	
 	switch (op) {
-		case 0x01:
+		case 0x01: {
 			[self executeZeroPageIndXOp:^(uint16_t addr) {
 				[self ORA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x05:
+		}
+		case 0x05: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self ORA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x06:
+		}
+		case 0x06: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self ASL:addr];
 			}];
 			break;
-		case 0x08:
+		}
+		case 0x08: {
 			[self executeImpliedOp:^{
 				[self PHP];
 			}];
 			break;
-		case 0x09:
+		}
+		case 0x09: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self ORA:val];
 			}];
 			break;
-		case 0x0A:
+		}
+		case 0x0A: {
 			[self executeImpliedOp:^{
 				[self ASL_a];
 			}];
 			break;
-		case 0x0D:
+		}
+		case 0x0D: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self ORA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x0E:
+		}
+		case 0x0E: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self ASL:addr];
 			}];
 			break;
-		case 0x10:
+		}
+		case 0x10: {
 			[self executeRelativeOp:^(uint16_t addr) {
 				[self BPL:addr];
 			}];
 			break;
-		case 0x11:
+		}
+		case 0x11: {
 			[self executeZeroPageIndYOp:^(uint16_t addr) {
 				[self ORA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x15:
+		}
+		case 0x15: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self ORA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x16:
+		}
+		case 0x16: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self ASL:addr];
 			}];
 			break;
-		case 0x18:
+		}
+		case 0x18: {
 			[self executeImpliedOp:^{
 				[self CLC];
 			}];
 			break;
-		case 0x19:
+		}
+		case 0x19: {
 			[self executeAbsoluteYOp:^(uint16_t addr) {
 				[self ORA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x1D:
+		}
+		case 0x1D: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self ORA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x1E:
+		}
+		case 0x1E: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self ASL:addr];
 			}];
 			break;
-		case 0x20:
+		}
+		case 0x20: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self JSR:addr];
 			}];
 			break;
-		case 0x21:
+		}
+		case 0x21: {
 			[self executeZeroPageIndXOp:^(uint16_t addr) {
 				[self AND:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x24:
+		}
+		case 0x24: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self BIT:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x25:
+		}
+		case 0x25: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self AND:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x26:
+		}
+		case 0x26: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self ROL:addr];
 			}];
 			break;
-		case 0x28:
+		}
+		case 0x28: {
 			[self executeImpliedOp:^{
 				[self PLP];
 			}];
 			break;
-		case 0x29:
+		}
+		case 0x29: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self AND:val];
 			}];
 			break;
-		case 0x2A:
+		}
+		case 0x2A: {
 			[self executeImpliedOp:^{
 				[self ROL_a];
 			}];
 			break;
-		case 0x2C:
+		}
+		case 0x2C: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self BIT:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x2D:
+		}
+		case 0x2D: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self AND:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x2E:
+		}
+		case 0x2E: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self ROL:addr];
 			}];
 			break;
-		case 0x30:
+		}
+		case 0x30: {
 			[self executeRelativeOp:^(uint16_t addr) {
 				[self BMI:addr];
 			}];
 			break;
-		case 0x31:
+		}
+		case 0x31: {
 			[self executeZeroPageIndYOp:^(uint16_t addr) {
 				[self AND:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x35:
+		}
+		case 0x35: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self AND:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x36:
+		}
+		case 0x36: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self ROL:addr];
 			}];
 			break;
-		case 0x38:
+		}
+		case 0x38: {
 			[self executeImpliedOp:^{
 				[self SEC];
 			}];
 			break;
-		case 0x39:
+		}
+		case 0x39: {
 			[self executeAbsoluteYOp:^(uint16_t addr) {
 				[self AND:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x3D:
+		}
+		case 0x3D: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self AND:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x3E:
+		}
+		case 0x3E: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self ROL:addr];
 			}];
 			break;
-		case 0x41:
+		}
+		case 0x41: {
 			[self executeZeroPageIndXOp:^(uint16_t addr) {
 				[self EOR:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x45:
+		}
+		case 0x45: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self EOR:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x46:
+		}
+		case 0x46: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self LSR:addr];
 			}];
 			break;
-		case 0x48:
+		}
+		case 0x48: {
 			[self executeImpliedOp:^{
 				[self PHA];
 			}];
 			break;
-		case 0x49:
+		}
+		case 0x49: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self EOR:val];
 			}];
 			break;
-		case 0x4A:
+		}
+		case 0x4A: {
 			[self executeImpliedOp:^{
 				[self LSR_a];
 			}];
 			break;
-		case 0x4C:
+		}
+		case 0x4C: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self JMP:addr];
 			}];
 			break;
-		case 0x4D:
+		}
+		case 0x4D: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self EOR:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x4E:
+		}
+		case 0x4E: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self LSR:addr];
 			}];
 			break;
-		case 0x50:
+		}
+		case 0x50: {
 			[self executeRelativeOp:^(uint16_t addr) {
 				[self BVC:addr];
 			}];
 			break;
-		case 0x51:
+		}
+		case 0x51: {
 			[self executeZeroPageIndYOp:^(uint16_t addr) {
 				[self EOR:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x55:
+		}
+		case 0x55: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self EOR:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x56:
+		}
+		case 0x56: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self LSR:addr];
 			}];
 			break;
-		case 0x58:
+		}
+		case 0x58: {
 			[self executeImpliedOp:^{
 				[self CLI];
 			}];
 			break;
-		case 0x59:
+		}
+		case 0x59: {
 			[self executeAbsoluteYOp:^(uint16_t addr) {
 				[self EOR:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x5D:
+		}
+		case 0x5D: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self EOR:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x5E:
+		}
+		case 0x5E: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self LSR:addr];
 			}];
 			break;
-		case 0x60:
+		}
+		case 0x60: {
 			[self executeImpliedOp:^{
 				[self RTS];
 			}];
 			break;
-		case 0x61:
+		}
+		case 0x61: {
 			[self executeZeroPageIndXOp:^(uint16_t addr) {
 				[self ADC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x65:
+		}
+		case 0x65: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self ADC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x66:
+		}
+		case 0x66: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self ROR:addr];
 			}];
 			break;
-		case 0x68:
+		}
+		case 0x68: {
 			[self executeImpliedOp:^{
 				[self PLA];
 			}];
 			break;
-		case 0x69:
+		}
+		case 0x69: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self ADC:val];
 			}];
 			break;
-		case 0x6A:
+		}
+		case 0x6A: {
 			[self executeImpliedOp:^{
 				[self ROR_a];
 			}];
 			break;
-		case 0x6C:
+		}
+		case 0x6C: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				uint16_t oaddr = [_memory readShortAtAddress:addr];
 				_cycles += 2;
@@ -448,47 +503,56 @@
 				[self JMP:oaddr];
 			}];
 			break;
-		case 0x6D:
+		}
+		case 0x6D: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self ADC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x6E:
+		}
+		case 0x6E: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self ROR:addr];
 			}];
 			break;
-		case 0x70:
+		}
+		case 0x70: {
 			[self executeRelativeOp:^(uint16_t addr) {
 				[self BVS:addr];
 			}];
 			break;
-		case 0x71:
+		}
+		case 0x71: {
 			[self executeZeroPageIndYOp:^(uint16_t addr) {
 				[self ADC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x75:
+		}
+		case 0x75: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self ADC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x76:
+		}
+		case 0x76: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self ROR:addr];
 			}];
 			break;
-		case 0x78:
+		}
+		case 0x78: {
 			[self executeImpliedOp:^{
 				[self SEI];
 			}];
 			break;
-		case 0x79:
+		}
+		case 0x79: {
 			[self executeAbsoluteYOp:^(uint16_t addr) {
 				[self ADC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x7C:
+		}
+		case 0x7C: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				// absolute indexed indirect mode
 				uint16_t oaddr = [_memory readShortAtAddress:addr+_x];
@@ -497,417 +561,500 @@
 				[self JMP:oaddr];
 			}];
 			break;
-		case 0x7D:
+		}
+		case 0x7D: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self ADC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0x7E:
+		}
+		case 0x7E: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self ROR:addr];
 			}];
 			break;
-		case 0x81:
+		}
+		case 0x81: {
 			[self executeZeroPageIndXOp:^(uint16_t addr) {
 				[self STA:addr];
 			}];
 			break;
-		case 0x84:
+		}
+		case 0x84: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self STY:addr];
 			}];
 			break;
-		case 0x85:
+		}
+		case 0x85: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self STA:addr];
 			}];
 			break;
-		case 0x86:
+		}
+		case 0x86: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self STX:addr];
 			}];
 			break;
-		case 0x88:
+		}
+		case 0x88: {
 			[self executeImpliedOp:^{
 				[self DEY];
 			}];
 			break;
-		case 0x89:
+		}
+		case 0x89: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self BIT:val];
 			}];
 			break;
-		case 0x8A:
+		}
+		case 0x8A: {
 			[self executeImpliedOp:^{
 				[self TXA];
 			}];
 			break;
-		case 0x8C:
+		}
+		case 0x8C: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self STY:addr];
 			}];
 			break;
-		case 0x8D:
+		}
+		case 0x8D: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self STA:addr];
 			}];
 			break;
-		case 0x8E:
+		}
+		case 0x8E: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self STX:addr];
 			}];
 			break;
-		case 0x90:
+		}
+		case 0x90: {
 			[self executeRelativeOp:^(uint16_t addr) {
 				[self BCC:addr];
 			}];
 			break;
-		case 0x91:
+		}
+		case 0x91: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				uint16_t oaddr = [_memory readShortZPAtAddress:addr] + _y;
 				[self STA:oaddr];
 			}];
 			break;
-		case 0x94:
+		}
+		case 0x94: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self STY:addr];
 			}];
 			break;
-		case 0x95:
+		}
+		case 0x95: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self STA:addr];
 			}];
 			break;
-		case 0x96:
+		}
+		case 0x96: {
 			[self executeZeroPageYOp:^(uint8_t addr) {
 				[self STX:addr];
 			}];
 			break;
-		case 0x98:
+		}
+		case 0x98: {
 			[self executeImpliedOp:^{
 				[self TYA];
 			}];
 			break;
-		case 0x99:
+		}
+		case 0x99: {
 			[self executeAbsoluteYOp:^(uint16_t addr) {
 				[self STA:addr];
 			}];
 			break;
-		case 0x9A:
+		}
+		case 0x9A: {
 			[self executeImpliedOp:^{
 				[self TXS];
 			}];
 			break;
-		case 0x9D:
+		}
+		case 0x9D: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self STA:addr];
 			}];
 			break;
-		case 0xA0:
+		}
+		case 0xA0: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self LDY:val];
 			}];
 			break;
-		case 0xA1:
+		}
+		case 0xA1: {
 			[self executeZeroPageIndXOp:^(uint16_t addr) {
 				[self LDA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xA2:
+		}
+		case 0xA2: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self LDX:val];
 			}];
 			break;
-		case 0xA4:
+		}
+		case 0xA4: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self LDY:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xA5:
+		}
+		case 0xA5: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self LDA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xA6:
+		}
+		case 0xA6: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self LDX:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xA8:
+		}
+		case 0xA8: {
 			[self executeImpliedOp:^{
 				[self TAY];
 			}];
 			break;
-		case 0xA9:
+		}
+		case 0xA9: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self LDA:val];
 			}];
 			break;
-		case 0xAA:
+		}
+		case 0xAA: {
 			[self executeImpliedOp:^{
 				[self TAX];
 			}];
 			break;
-		case 0xAC:
+		}
+		case 0xAC: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self LDY:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xAD:
+		}
+		case 0xAD: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self LDA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xAE:
+		}
+		case 0xAE: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self LDX:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xB0:
+		}
+		case 0xB0: {
 			[self executeRelativeOp:^(uint16_t addr) {
 				[self BCS:addr];
 			}];
 			break;
-		case 0xB1:
+		}
+		case 0xB1: {
 			[self executeZeroPageIndYOp:^(uint16_t addr) {
 				[self LDA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xB4:
+		}
+		case 0xB4: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self LDY:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xB5:
+		}
+		case 0xB5: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self LDA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xB6:
+		}
+		case 0xB6: {
 			[self executeZeroPageYOp:^(uint8_t addr) {
 				[self LDX:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xB8:
+		}
+		case 0xB8: {
 			[self executeImpliedOp:^{
 				[self CLV];
 			}];
 			break;
-		case 0xB9:
+		}
+		case 0xB9: {
 			[self executeAbsoluteYOp:^(uint16_t addr) {
 				[self LDA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xBA:
+		}
+		case 0xBA: {
 			[self executeImpliedOp:^{
 				[self TSX];
 			}];
 			break;
-		case 0xBC:
+		}
+		case 0xBC: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self LDY:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xBD:
+		}
+		case 0xBD: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self LDA:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xBE:
+		}
+		case 0xBE: {
 			[self executeAbsoluteYOp:^(uint16_t addr) {
 				[self LDX:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xC0:
+		}
+		case 0xC0: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self CPY:val];
 			}];
 			break;
-		case 0xC1:
+		}
+		case 0xC1: {
 			[self executeZeroPageIndXOp:^(uint16_t addr) {
 				[self CMP:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xC4:
+		}
+		case 0xC4: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self CPY:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xC5:
+		}
+		case 0xC5: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self CMP:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xC6:
+		}
+		case 0xC6: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self DEC:addr];
 			}];
 			break;
-		case 0xC8:
+		}
+		case 0xC8: {
 			[self executeImpliedOp:^{
 				[self INY];
 			}];
 			break;
-		case 0xC9:
+		}
+		case 0xC9: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self CMP:val];
 			}];
 			break;
-		case 0xCA:
+		}
+		case 0xCA: {
 			[self executeImpliedOp:^{
 				[self DEX];
 			}];
 			break;
-		case 0xCC:
+		}
+		case 0xCC: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self CPY:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xCD:
+		}
+		case 0xCD: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self CMP:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xCE:
+		}
+		case 0xCE: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self DEC:addr];
 			}];
 			break;
-		case 0xD0:
+		}
+		case 0xD0: {
 			[self executeRelativeOp:^(uint16_t addr) {
 				[self BNE:addr];
 			}];
 			break;
-		case 0xD1:
+		}
+		case 0xD1: {
 			[self executeZeroPageIndYOp:^(uint16_t addr) {
 				[self CMP:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xD5:
+		}
+		case 0xD5: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self CMP:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xD6:
+		}
+		case 0xD6: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self DEC:addr];
 			}];
 			break;
-		case 0xD8:
+		}
+		case 0xD8: {
 			[self executeImpliedOp:^{
 				[self CLD];
 			}];
 			break;
-		case 0xD9:
+		}
+		case 0xD9: {
 			[self executeAbsoluteYOp:^(uint16_t addr) {
 				[self CMP:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xDD:
+		}
+		case 0xDD: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self CMP:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xDE:
+		}
+		case 0xDE: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self DEC:addr];
 			}];
 			break;
-		case 0xE0:
+		}
+		case 0xE0: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self CPX:val];
 			}];
 			break;
-		case 0xE1:
+		}
+		case 0xE1: {
 			[self executeZeroPageIndXOp:^(uint16_t addr) {
 				[self SBC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xE4:
+		}
+		case 0xE4: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self CPX:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xE5:
+		}
+		case 0xE5: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self SBC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xE6:
+		}
+		case 0xE6: {
 			[self executeZeroPageOp:^(uint8_t addr) {
 				[self INC:addr];
 			}];
 			break;
-		case 0xE8:
+		}
+		case 0xE8: {
 			[self executeImpliedOp:^{
 				[self INX];
 			}];
 			break;
-		case 0xE9:
+		}
+		case 0xE9: {
 			[self executeImmediateOp:^(uint8_t val) {
 				[self SBC:val];
 			}];
 			break;
-		case 0xEA:
+		}
+		case 0xEA: {
 			[self executeImpliedOp:^{
 				[self NOP];
 			}];
 			break;
-		case 0xEC:
+		}
+		case 0xEC: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self CPX:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xED:
+		}
+		case 0xED: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self SBC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xEE:
+		}
+		case 0xEE: {
 			[self executeAbsoluteOp:^(uint16_t addr) {
 				[self INC:addr];
 			}];
 			break;
-		case 0xF0:
+		}
+		case 0xF0: {
 			[self executeRelativeOp:^(uint16_t addr) {
 				[self BEQ:addr];
 			}];
 			break;
-		case 0xF1:
+		}
+		case 0xF1: {
 			[self executeZeroPageIndYOp:^(uint16_t addr) {
 				[self SBC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xF5:
+		}
+		case 0xF5: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self SBC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xF6:
+		}
+		case 0xF6: {
 			[self executeZeroPageXOp:^(uint8_t addr) {
 				[self INC:addr];
 			}];
 			break;
-		case 0xF8:
+		}
+		case 0xF8: {
 			[self executeImpliedOp:^{
 				[self SED];
 			}];
 			break;
-		case 0xF9:
+		}
+		case 0xF9: {
 			[self executeAbsoluteYOp:^(uint16_t addr) {
 				[self SBC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xFD:
+		}
+		case 0xFD: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self SBC:MEM_VAL(addr)];
 			}];
 			break;
-		case 0xFE:
+		}
+		case 0xFE: {
 			[self executeAbsoluteXOp:^(uint16_t addr) {
 				[self INC:addr];
 			}];
 			break;
+		}
 		default:
 			if (op != 0x0)
 				NSLog(@"Unknown code: 0x%X", op);

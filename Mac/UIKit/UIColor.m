@@ -19,18 +19,14 @@
 - (id)initWithNSColor:(NSColor *)color {
 	self = [super init];
 	if (self) {
-		_color = [color retain];
+		_color = color;
 	}
 	return self;
 }
 
-- (void)dealloc {
-	[_color release];
-	[super dealloc];
-}
 
 + (UIColor *)blackColor {
-	return [[[[self class] alloc] initWithNSColor:[NSColor blackColor]] autorelease];
+	return [[[self class] alloc] initWithNSColor:[NSColor blackColor]];
 }
 
 - (void)set {

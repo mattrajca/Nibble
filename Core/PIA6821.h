@@ -14,7 +14,7 @@
 	BOOL _inputEnabled, _videoEnabled;
 }
 
-@property (nonatomic, assign) id < PIA6821Delegate > delegate;
+@property (nonatomic, weak) id < PIA6821Delegate > delegate;
 
 - (id)initWithMemory:(Memory *)someMemory;
 

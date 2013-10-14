@@ -31,17 +31,12 @@
 	
 	self = [super init];
 	if (self) {
-		_memory = [someMemory retain];
+		_memory = someMemory;
 		[self reset];
 	}
 	return self;
 }
 
-- (void)dealloc {
-	[_memory release];
-	
-	[super dealloc];
-}
 
 - (void)reset {
 	_inputEnabled = _videoEnabled = NO;

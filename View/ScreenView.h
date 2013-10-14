@@ -27,7 +27,7 @@
 @property (nonatomic, assign) CGFloat fontSize;
 @property (nonatomic, assign) CGFloat characterSpacing;
 
-@property (nonatomic, assign) id < ScreenViewDelegate > delegate;
+@property (nonatomic, weak) id < ScreenViewDelegate > delegate;
 
 - (void)reset;
 

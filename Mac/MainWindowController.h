@@ -18,7 +18,7 @@
 	PIA6821 *_pia;
 }
 
-@property (nonatomic, retain) IBOutlet ScreenView *screenView;
+@property (nonatomic, strong) IBOutlet ScreenView *screenView;
 
 - (void)loadMemoryDumpFileAtPath:(NSURL *)aPath;
 
