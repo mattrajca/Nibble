@@ -155,7 +155,7 @@
 		C9DF170212FDE5C900ECF9FB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		C9DF170312FDE5C900ECF9FB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C9DF170412FDE5C900ECF9FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C9DF171C12FDE5CA00ECF9FB /* NibbleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NibbleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9DF171C12FDE5CA00ECF9FB /* NibbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NibbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E21A37132BC86A00987AB0 /* UINavigationBar+Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Style.h"; sourceTree = "<group>"; };
 		C9E21A38132BC86A00987AB0 /* UINavigationBar+Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Style.m"; sourceTree = "<group>"; };
 		C9EE72BE130F390300A07627 /* PIA6821.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIA6821.h; sourceTree = "<group>"; };
@@ -376,7 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				C9DF16FB12FDE5C900ECF9FB /* Nibble.app */,
-				C9DF171C12FDE5CA00ECF9FB /* NibbleTests.octest */,
+				C9DF171C12FDE5CA00ECF9FB /* NibbleTests.xctest */,
 				C9B8564113075167005062FC /* NibbleTouch.app */,
 			);
 			name = Products;
@@ -458,8 +458,8 @@
 			);
 			name = NibbleTests;
 			productName = NibbleTests;
-			productReference = C9DF171C12FDE5CA00ECF9FB /* NibbleTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = C9DF171C12FDE5CA00ECF9FB /* NibbleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -780,20 +780,15 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Nibble.app/Contents/MacOS/Nibble";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Support/NibbleTests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Support/NibbleTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -805,19 +800,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Support/NibbleTests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Support/NibbleTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
