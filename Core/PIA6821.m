@@ -88,7 +88,7 @@
 }
 
 - (void)processInputChar:(char)character {
-	if (!_inputEnabled || character >= 0x80)
+	if (!_inputEnabled)
 		return;
 	
 	character &= 0x7F;
