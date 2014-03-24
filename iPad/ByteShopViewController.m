@@ -58,13 +58,6 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
 									   reuseIdentifier:CellIdentifier];
 		
-		UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
-		
-		UIImage *image = [UIImage imageNamed:@"SelectedRow.png"];
-		view.backgroundColor = [UIColor colorWithPatternImage:image];
-		
-		cell.selectedBackgroundView = view;
-		
 		cell.textLabel.textColor = [UIColor colorWithRed:78/255.0f
 												   green:75/255.0f
 													blue:66/255.0f
