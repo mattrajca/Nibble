@@ -455,6 +455,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Matt Rajca";
+				TargetAttributes = {
+					C9DF16FA12FDE5C900ECF9FB = {
+						DevelopmentTeam = RJKYY38TY2;
+					};
+				};
 			};
 			buildConfigurationList = C9DF16F512FDE5C900ECF9FB /* Build configuration list for PBXProject "Nibble" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -742,6 +747,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -759,6 +765,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
