@@ -32,9 +32,6 @@
 	self.tableView.rowHeight = 72.0f;
 	self.tableView.separatorColor = [UIColor colorWithWhite:0.8f alpha:1.0f];
 	
-	UIImage *image = [UIImage imageNamed:@"TableBackground.png"];
-	self.tableView.backgroundColor = [UIColor colorWithPatternImage:image];
-	
 	[self loadPrograms];
 }
 
